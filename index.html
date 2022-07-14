@@ -6,12 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style></style>
-  <script></script>
+  <link rel="stylesheet" href="./index.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css'
+    integrity='sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ=='
+    crossorigin='anonymous' />
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('menu');
+      if (menu.style.display == '' || menu.style.display == 'none') {
+        menu.style.display = 'block';
+      } else
+        menu.style.display = 'none';
+    }
+  </script>
 </head>
 
 <body>
-
+  <nav class="container">
+    <ul class="float-nav clearfix">
+      <li><a href="#">電子商務</a></li>
+      <li><a href="#">市場行銷</a></li>
+      <li><a href="#">辦公室生產力</a></li>
+      <li><a href="#">個人成長</a></li>
+      <li><a href="#">設計</a></li>
+      <li><a href="#">通訊工程與軟體</a></li>
+    </ul>
+  </nav>
+  <div class="container" id="hambugertoggle">
+    <a href="#" onclick="toggleMenu()" class="burgar_btn">
+      <i class="fas fa-bars"></i>
+    </a>
+    <ul id="menu">
+      <li><a href="#">電子商務</a></li>
+      <li><a href="#">市場行銷</a></li>
+      <li><a href="#">辦公室生產力</a></li>
+      <li><a href="#">個人成長</a></li>
+      <li><a href="#">設計</a></li>
+      <li><a href="#">通訊工程與軟體</a></li>
+    </ul>
+  </div>
 </body>
 
 </html>

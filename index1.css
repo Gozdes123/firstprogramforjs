@@ -245,6 +245,7 @@ nav a:hover:after {
     animation-name: fade;
     animation-duration: 1.5s;
 }
+
 @media only screen and (max-width: 790px) {
     nav {
         display: none;

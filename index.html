@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css'
+    integrity='sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ=='
+    crossorigin='anonymous' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <!-- 圖片導覽的字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="container">
+    <ul class="float-nav clearfix">
+      <li class=""><a href="#">Anime</a> </li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">My Favorite</a></li>
+      <li><a href="#">Recommend</a></li>
+
+    </ul>
+  </nav>
+  <div class="container" id="hambugertoggle">
+    <a href="#" onclick="toggleMenu()" class="burgar_btn">
+      <i class="fas fa-bars"></i>
+    </a>
+    <ul id="menu">
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">My Favorite</a></li>
+      <li><a href="#">Recommend</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </div>
+  <!-- 輪播  -->
+  <div class="carousel">
+    <div class="container1">
+      <img src="./img/fd23e28f-f572-40de-9b74-110f4ebad0e1.jpeg" alt="">
+      <img src="./img/e6f83eda8535bc2d5bb221f9951bdtr5.png" alt="">
+      <img src="./img/1076003.png" alt="">
+    </div>
+    <div class="shift">
+      <button class="btn left" onclick="LeftShift()">
+      </button>
+      <button class="btn right" onclick="RightShift()"></button>
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <!-- 圖片導覽 -->
+  <div class="container container_img">
+  </div>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('menu');
+      if (menu.style.display == '' || menu.style.display == 'none') {
+        menu.style.display = 'block';
+      } else
+        menu.style.display = 'none';
+    }
+    //  輪播圖片
+    let index = 0;
+    let ImageCount = document.querySelectorAll(".carousel .container1 img").length
+    const bottom = document.querySelector(".carousel .bottom")
+    for (let i = 0; i < ImageCount; i++) {
+      const indicator = document.createElement("div")
+      indicator.classList.add("indicator")
+      indicator.id = "num" + i
+      indicator.onclick = () => SetIndex(i)
+      bottom.append(indicator)
+    }
+    // 自動輪播
+    function creatAuto() {
+      return setInterval(() => {
+        index++
+        refresh()
+      }, 5000);
+    }
+    function refresh() {
+      let orange = document.querySelectorAll(".indicator")
+      if (index < 0) {
+        index = ImageCount - 1
+      } else if (index >= ImageCount) {
+        index = 0
+      }
+      let ini = "num" + (index)
+      let carousel = document.querySelector(".carousel")
+      let width = getComputedStyle(carousel).width
+      width = Number(width.slice(0, -2))
+      carousel.querySelector(".container1").style.left = index * width * -1 + "px"
+      for (let k = 0; k < ImageCount; k++) {
+        orange[k].style.opacity = 0.3
+      }
+      document.getElementById(ini).style.opacity = 1
+    }
+    function LeftShift() {
+      index--;
+      refresh()
+    }
+    function RightShift() {
+      index++;
+      refresh()
+    }
+    function SetIndex(idx) {
+      index = idx
+      refresh()
+    }
+
+    let autoTimer = creatAuto()
+    let refreshWrapper = (func) => {
+      return function (...args) {
+        let result = func(...args)
+        autoTimer
+        refresh()
+      }
+    }
+    refresh()
+    // 新增顯示圖片
+    let Container_Img = document.querySelector(".container_img");
+    let animename = ["間諜家家酒", "輝夜姬", "新石記", "間諜家家酒", "輝夜姬", "新石記"];
+    for (let i = 0; i < 6; i++) {
+      let img = document.createElement('img')
+      let a = document.createElement('a')
+      const AddImage = document.createElement("div")
+      AddImage.classList.add("col-2")
+      img.src = "./img/anime/" + "img" + i + ".jpg"
+      a.textContent = animename[i]
+      AddImage.appendChild(img)
+      AddImage.appendChild(a)
+      Container_Img.appendChild(AddImage)
+    }
+  </script>
+</body>
+
+</html>

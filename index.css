@@ -103,6 +103,10 @@ ul {
 }
 
 /* nav */
+.navbar {
+    background-color: #ffb5b549;
+    padding-top: 10px;
+}
 nav {
     width: 100vw;
     padding-top: 20px;
@@ -135,6 +139,7 @@ nav a:after {
 nav a:hover:after {
     width: 100%;
 }
+
 .float-nav li {
     float: right;
     position: relative;
@@ -240,22 +245,100 @@ nav a:hover:after {
     background-color: white;
     cursor: pointer;
 }
-/* 圖片導覽*/
-.container_img {
-    padding-top: 60px;
+/* 圖片NAV  */
+.container_img .img_nav {
+    position: relative;
 }
-.container_img a {
+.container_img .img_nav_ul li {
+    list-style: none;
+    float: left;
+    position: absolute;
+}
+.container_img .img_nav_ul li h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+.container_img .img_nav_ul .search {
+    position: absolute;
+    left: 76%;
+    top: 45%;
+}
+.container_img .img_nav_ul .search .search-bar {
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    border: 3px solid black;
+    background-color: white;
+}
+.container_img .img_nav_ul .search input::placeholder {
+    font-family: 'Orbitron', sans-serif;
+    color: black;
+}
+.container_img .img_nav_ul .search .search-btn {
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: #efe9e7;
+    outline: none;
+    border: 2px solid #3d1101;
+    cursor: pointer;
+    position: absolute;
+    top: 1.8%;
+    left: 101%;
+}
+.img_nav_content {
+    padding-top: 55px;
+}
+.img_nav_content_ul li {
+    list-style: none;
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.img_nav_content_ul li input {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ffcabe;
+}
+input[type='button'] {
+    font-size: 25px;
+}
+.img_nav_content_ul li input:hover {
+    background-color: #bababa;
+}
+#img_nav li {
+    float: left;
+    padding-left: 40px;
+    list-style: none;
+}
+#img_nav li h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+/* 圖片導覽 */
+
+.container_img h1 {
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 30px;
 }
 .col-2 {
     overflow: hidden;
+    position: relative;
 }
 .col-2 img {
     width: 100%;
-    height: 600px;
+    height: 60%;
     flex-shrink: 0;
     object-fit: cover;
+}
+.col-2 i {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    color: aliceblue;
+    border-color: black;
 }
 @media only screen and (max-width: 790px) {
     nav {

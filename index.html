@@ -19,11 +19,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
   <!-- navbar -->
-  <nav class="container">
+  <nav class="container navbar">
     <ul class="float-nav clearfix">
       <li class=""><a href="#">Anime</a> </li>
       <li><a href="#">Login</a></li>
@@ -60,6 +61,86 @@
   </div>
   <!-- 圖片導覽 -->
   <div class="container container_img">
+    <div class="col-12 clearfix">
+      <div class="col-12 img_nav">
+        <ul class="img_nav_ul">
+          <li>
+            <h1>分類</h1>
+          </li>
+          <li class="search">
+            <input class="search-bar" type="text" name="search" id="search" placeholder="輸入名稱">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 img_nav_content">
+        <ul class="img_nav_content_ul">
+          <li>
+            <input type="button" value="冒險" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="奇幻" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="愛情" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="驚悚" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="推理" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="運動" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="熱血" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="社會寫實" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="幽默搞笑" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="電影版" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+          <li>
+            <input type="button" value="真人" name="按鈕名稱" style="width:150px;height:50px;">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img0.jpg" alt="">
+      <h1>間諜家家酒</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img1.jpg" alt="">
+      <h1>輝夜姬</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img2.jpg" alt="">
+      <h1>新石記</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img3.jpg" alt="">
+      <h1>間諜家家酒</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img4.jpg" alt="">
+      <h1>輝夜姬</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img5.jpg" alt="">
+      <h1>新石記</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
   </div>
   <script>
     function toggleMenu() {
@@ -127,19 +208,19 @@
     }
     refresh()
     // 新增顯示圖片
-    let Container_Img = document.querySelector(".container_img");
-    let animename = ["間諜家家酒", "輝夜姬", "新石記", "間諜家家酒", "輝夜姬", "新石記"];
-    for (let i = 0; i < 6; i++) {
-      let img = document.createElement('img')
-      let a = document.createElement('a')
-      const AddImage = document.createElement("div")
-      AddImage.classList.add("col-2")
-      img.src = "./img/anime/" + "img" + i + ".jpg"
-      a.textContent = animename[i]
-      AddImage.appendChild(img)
-      AddImage.appendChild(a)
-      Container_Img.appendChild(AddImage)
-    }
+    // let Container_Img = document.querySelector(".container_img");
+    // let animename = ["間諜家家酒", "輝夜姬", "新石記", "間諜家家酒", "輝夜姬", "新石記"];
+    // for (let i = 0; i < 6; i++) {
+    //   let img = document.createElement('img')
+    //   let a = document.createElement('a')
+    //   const AddImage = document.createElement("div")
+    //   AddImage.classList.add("col-2")
+    //   img.src = "./img/anime/" + "img" + i + ".jpg"
+    //   a.textContent = animename[i]
+    //   AddImage.appendChild(img)
+    //   AddImage.appendChild(a)
+    //   Container_Img.appendChild(AddImage)
+    // }
   </script>
 </body>
 

@@ -64,27 +64,27 @@
     <div class="schedule_col-12 col-12">
       <h1>時程表</h1>
     </div>
-    <div class="col-12">
+    <div class="col-12" id="#days">
       <ul>
-        <li>
+        <li class="Sun">
           <h1 class="date">週日</h1>
           <h2>間諜家家酒</h2>
           <h2>輝夜姬想讓人告白</h2>
           <h2>新石記</h2>
         </li>
-        <li>
+        <li class="Mon">
           <h1 class="date">週一</h1>
           <h2>炎炎消防隊</h2>
           <h2>歡迎來到實力至上主義的教室</h2>
           <h2>杜鵑的婚約</h2>
         </li>
-        <li>
+        <li class="Tue">
           <h1 class="date">週二</h1>
           <h2>盾之勇者成名錄</h2>
           <h2>白領羽球部</h2>
           <h2>國王排名</h2>
         </li>
-        <li>
+        <li class="Wed">
           <h1 class="date">週三</h1>
           <h2>進擊的巨人</h2>
           <h2>86不存在的戰區</h2>
@@ -93,18 +93,18 @@
           <h2>86不存在的戰區</h2>
           <h2>無職轉生</h2>
         </li>
-        <li>
+        <li class="Thr">
           <h1 class="date">週四</h1>
           <h2>咒術迴戰</h2>
           <h2>Lycoris Recoil 莉可麗絲</h2>
           <h2>相合之物</h2>
         </li>
-        <li>
+        <li class="Fri">
           <h1 class="date">週五</h1>
           <h2>魔法科高中的劣等生追憶篇</h2>
           <h2>鬼滅之刃遊郭篇</h2>
         </li>
-        <li>
+        <li class="Sat">
           <h1 class="date">週六</h1>
           <h2>宿命迴響</h2>
         </li>
@@ -337,6 +337,20 @@
       }
     }
     refresh()
+    // 顯示天數
+    let date = new Date();
+    let weekarray = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"]
+    function days() {
+      let week
+      if (date.getDay() == 1) {
+        week = weekarray[0];
+      } else {
+        week = weekarray[(date.getDay() - 1)];
+      }
+      let day = document.querySelector("." + week)
+      // day.style.backgroundColor = "#ff6a48";
+    }
+    days()
     // 新增顯示圖片
     // let Container_Img = document.querySelector(".container_img");
     // let animename = ["間諜家家酒", "輝夜姬", "新石記", "間諜家家酒", "輝夜姬", "新石記"];

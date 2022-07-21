@@ -253,7 +253,6 @@ nav a:hover:after {
 .schedule ul {
     display: flex;
     list-style: none;
-    /* background-color: #ffd1c7; */
 }
 .schedule_col-12 {
     margin-left: 20px;
@@ -263,7 +262,12 @@ nav a:hover:after {
     font-size: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid red;
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+    background-color: rgba(61, 203, 255, 0.4);
+}
+.schedule h2:hover {
+    background-color: rgb(0, 187, 255);
 }
 .schedule li {
     width: calc(100% / 7);
@@ -373,7 +377,7 @@ input[type='button'] {
 .col-2 {
     position: relative;
     overflow: hidden;
-    height: 350px;
+    height: 360px;
 }
 .col-2 img {
     flex-shrink: 0;
@@ -470,9 +474,10 @@ footer .icon {
         top: 1.8%;
         left: 101%;
     }
+
     .col-2 img {
-        width: 100%;
-        height: 450px;
+        width: 320px;
+        height: 440px;
         flex-shrink: 0;
         object-fit: cover;
     }

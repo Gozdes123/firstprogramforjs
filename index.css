@@ -16,6 +16,10 @@ body {
     clear: both;
 }
 
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
 html,
 body,
 h1,
@@ -126,7 +130,7 @@ nav a {
     font-family: 'Orbitron', sans-serif;
 }
 
-/* 滑鼠移到 <a> 時變成深底淺色 */
+/* 滑鼠移到 <a> 時變成底線 */
 nav a:after {
     content: '';
     position: absolute;
@@ -184,7 +188,7 @@ nav a:hover:after {
 .carousel {
     margin-top: 20px;
     width: 100%;
-    height: 30%;
+    height: 25%;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -245,6 +249,31 @@ nav a:hover:after {
     background-color: white;
     cursor: pointer;
 }
+/* 時程表 */
+.schedule ul {
+    display: flex;
+    list-style: none;
+    /* background-color: #ffd1c7; */
+}
+.schedule_col-12 {
+    margin-left: 20px;
+}
+.schedule h2 {
+    display: block;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid red;
+}
+.schedule li {
+    width: calc(100% / 7);
+    padding-left: 20px;
+    cursor: pointer;
+}
+.schedule .date {
+    font-size: 26px;
+}
+
 /* 圖片NAV  */
 .container_img .img_nav {
     position: relative;
@@ -287,13 +316,23 @@ nav a:hover:after {
     top: 1.8%;
     left: 101%;
 }
-.img_nav_content {
-    padding-top: 55px;
-    visibility: hidden;
-    transition: visibility 5s, opacity 1s linear;
-}
+
 .gateclick {
     cursor: pointer;
+}
+.img_nav_content_outside {
+    display: none;
+}
+.img_nav_ul li input {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    /* border-style: none; */
+    cursor: pointer;
+}
+.img_nav_ul li input:hover {
+    background-color: rgba(61, 203, 255, 0.4);
 }
 .img_nav_content_ul li {
     list-style: none;
@@ -329,15 +368,14 @@ input[type='button'] {
 
 .container_img h1 {
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 25px;
-    display: none;
+    font-size: 16px;
 }
 .col-2 {
     position: relative;
+    overflow: hidden;
+    height: 350px;
 }
 .col-2 img {
-    width: 100%;
-    height: 300px;
     flex-shrink: 0;
     object-fit: cover;
 }
@@ -346,23 +384,50 @@ input[type='button'] {
     top: 20px;
     right: 25px;
     font-size: 35px;
+    color: white;
+}
+.col-2 i:hover {
     color: red;
+    transition: 2s;
+}
+
+/* footer */
+footer {
+    height: 100px;
+    background-color: rgba(61, 203, 255, 0.4);
+    margin-top: 80px;
+}
+footer h1 {
+    font-size: 30px;
+}
+footer .col-6 {
+    height: 100px;
+}
+footer .col-6 h1 {
+    font-size: 18px;
+    text-align: center;
+}
+footer .icon i {
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+}
+footer .icon {
+    margin: 0;
+    padding: 0;
 }
 @media only screen and (max-width: 790px) {
     nav {
         display: none;
     }
 }
-@media only screen and (min-width: 790px) {
+@media only screen and (min-width: 1500px) {
     #hambugertoggle {
         display: none;
     }
-}
-/* 大螢幕 */
-@media only screen and (min-width: 1500px) {
     .container_img .img_nav_ul .search {
         position: absolute;
-        left: 85%;
+        left: 78%;
         top: 45%;
     }
     .container_img .img_nav_ul .search .search-btn {
@@ -380,7 +445,7 @@ input[type='button'] {
     }
     .col-2 img {
         width: 100%;
-        height: 520px;
+        height: 300px;
         flex-shrink: 0;
         object-fit: cover;
     }

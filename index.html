@@ -22,6 +22,7 @@
 </head>
 
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!-- navbar -->
   <nav class="container navbar">
     <ul class="float-nav clearfix">
@@ -58,13 +59,65 @@
     </div>
     <div class="bottom"></div>
   </div>
+  <!-- 時程表 -->
+  <div class="container schedule">
+    <div class="schedule_col-12 col-12">
+      <h1>時程表</h1>
+    </div>
+    <div class="col-12">
+      <ul>
+        <li>
+          <h1 class="date">週日</h1>
+          <h2>間諜家家酒</h2>
+          <h2>輝夜姬想讓人告白</h2>
+          <h2>新石記</h2>
+        </li>
+        <li>
+          <h1 class="date">週一</h1>
+          <h2>炎炎消防隊</h2>
+          <h2>歡迎來到實力至上主義的教室</h2>
+          <h2>杜鵑的婚約</h2>
+        </li>
+        <li>
+          <h1 class="date">週二</h1>
+          <h2>盾之勇者成名錄</h2>
+          <h2>白領羽球部</h2>
+          <h2>國王排名</h2>
+        </li>
+        <li>
+          <h1 class="date">週三</h1>
+          <h2>進擊的巨人</h2>
+          <h2>86不存在的戰區</h2>
+          <h2>無職轉生</h2>
+          <h2>進擊的巨人</h2>
+          <h2>86不存在的戰區</h2>
+          <h2>無職轉生</h2>
+        </li>
+        <li>
+          <h1 class="date">週四</h1>
+          <h2>咒術迴戰</h2>
+          <h2>Lycoris Recoil 莉可麗絲</h2>
+          <h2>相合之物</h2>
+        </li>
+        <li>
+          <h1 class="date">週五</h1>
+          <h2>魔法科高中的劣等生追憶篇</h2>
+          <h2>鬼滅之刃遊郭篇</h2>
+        </li>
+        <li>
+          <h1 class="date">週六</h1>
+          <h2>宿命迴響</h2>
+        </li>
+      </ul>
+    </div>
+  </div>
   <!-- 圖片導覽 -->
   <div class="container container_img">
     <div class="col-12 clearfix">
       <div class="col-12 img_nav">
         <ul class="img_nav_ul">
           <li>
-            <h2 class="gateclick" onclick="CatetoggleMenu()">分類</h2>
+            <input type="button" value="分類" name="按鈕名稱" class="gateclick" style="width:150px;height:50px;">
           </li>
           <li class="search">
             <input class="search-bar" type="text" name="search" id="search" placeholder="輸入名稱">
@@ -72,42 +125,44 @@
           </li>
         </ul>
       </div>
-      <div class="col-12 img_nav_content">
-        <ul class="img_nav_content_ul">
-          <li>
-            <input type="button" value="冒險" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="奇幻" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="愛情" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="驚悚" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="推理" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="運動" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="熱血" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="社會寫實" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="幽默搞笑" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="電影版" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-          <li>
-            <input type="button" value="真人" name="按鈕名稱" style="width:150px;height:50px;">
-          </li>
-        </ul>
+      <div class="col-12 img_nav_content_outside">
+        <div class="col-12 img_nav_content">
+          <ul class="img_nav_content_ul">
+            <li>
+              <input type="button" value="冒險" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="奇幻" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="愛情" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="驚悚" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="推理" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="運動" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="熱血" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="社會寫實" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="幽默搞笑" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="電影版" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+            <li>
+              <input type="button" value="真人" name="按鈕名稱" style="width:150px;height:50px;">
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-2">
@@ -141,8 +196,8 @@
       <i class="fa-solid fa-heart"></i>
     </div>
     <div class="col-2">
-      <img src="./img/anime/img12.jpg" alt="">
-      <h1>咒術迴戰 </h1>
+      <img src="./img/anime/img6.jpg" alt="">
+      <h1>盾之勇者成名錄</h1>
       <i class="fa-solid fa-heart"></i>
     </div>
     <div class="col-2">
@@ -170,7 +225,53 @@
       <h1>無職轉生</h1>
       <i class="fa-solid fa-heart"></i>
     </div>
+    <div class="col-2">
+      <img src="./img/anime/img12.jpg" alt="">
+      <h1>咒術迴戰</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img13.jpg" alt="">
+      <h1>Lycoris Recoil 莉可麗絲</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img14.jpg" alt="">
+      <h1>相合之物</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img15.jpg" alt="">
+      <h1>魔法科高中的劣等生追憶篇</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img16.jpg" alt="">
+      <h1>鬼滅之刃遊郭篇</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="col-2">
+      <img src="./img/anime/img17.jpg" alt="">
+      <h1>宿命迴響</h1>
+      <i class="fa-solid fa-heart"></i>
+    </div>
   </div>
+  <footer class="col-12">
+    <div class="col-6">
+      <h1>Copyright 2022 Anime.com | operated by Wilson Privacy Policy</h1>
+    </div>
+    <div class="col-6 icon">
+      <div class="col-4 icon">
+        <i class="fa-brands fa-facebook-square"></i>
+      </div>
+      <div class="col-4 icon">
+        <i class="fa-brands fa-instagram-square"></i>
+      </div>
+      <div class="col-4 icon">
+        <i class="fa-brands fa-twitter-square"></i>
+      </div>
+    </div>
+  </footer>
   <script>
     function toggleMenu() {
       var menu = document.getElementById('menu');
@@ -251,17 +352,11 @@
     //   Container_Img.appendChild(AddImage)
     // }
     // 分類toggle
-    function CatetoggleMenu() {
-      var gate = document.querySelector('.img_nav_content');
-      if (gate.style.visibility === '' || gate.style.visibility === 'hidden') {
-        gate.style.visibility = 'visible';
-        gate.style.opacity = '1';
-      } else {
-        gate.style.visibility = 'hidden';
-        gate.style.opacity = '0';
-      }
-
-    }
+    $(document).ready(function () {
+      $('.gateclick').click(function () {
+        $('.img_nav_content_outside').slideToggle('slow');
+      });
+    });
   </script>
 </body>
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Input Search value Property
+  </title>
+  <style>
+    h1 {
+      color: green;
+    }
+
+    h2 {
+      font-family: Impact;
+    }
+
+    body {
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>GeeksforGeeks</h1>
+  <h2>Input Search value Property</h2>
+
+  <input type="Search" id="test" placeholder="Type to search.." value="">
+  <br>
+  <br>
+  <br>
+  <button onclick="Access()">click here
+  </button>
+
+  <p id="check" style="font-size:24px;
+              color:green;">
+  </p>
+
+  <script>
+    const menu = [
+      {
+        title: '間諜家家酒',
+        category: '奇幻',
+        img: './img/anime/img0.jpg',
+      },
+      {
+        title: '輝夜姬想讓人告白',
+        category: '愛情',
+        img: './img/anime/img1.jpg',
+      },
+      {
+
+        title: '新石記',
+        category: '奇幻',
+        img: './img/anime/img2.jpg',
+      },
+    ];
+    function Access() {
+      var s = document.getElementById(
+        "test").value;
+      for (let i = 0; i < menu.length; i++) {
+        if (menu[i].title.includes(s)) {
+          alert(menu[i].title);
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -111,7 +111,8 @@ const container = document.querySelector('.btn-container');
 const sectionCenter = document.querySelector('.section-center');
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
-        return `<article class="menu-item col-2">
+        return `
+        <article class="menu-item col-2">
               <img src="${item.img}" class="photo" alt=${item.title}">
               <div class="item-info">
                 <header>
@@ -170,3 +171,4 @@ window.addEventListener('DOMContentLoaded', function () {
     displayMenuItems(menu); //預設顯示所有內容
     displayMenuButtons(); //顯示按鈕與開啟其功能
 });
+

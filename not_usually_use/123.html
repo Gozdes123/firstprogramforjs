@@ -6,6 +6,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .container {
+      width: 100%;
+    }
+
+    .col-1 {
+      width: calc(100% / 12 * 1);
+    }
+
+    .col-2 {
+      width: calc(100% / 12 * 2);
+    }
+
+    .col-3 {
+      width: calc(100% / 12 * 3);
+    }
+
+    .col-4 {
+      width: calc(100% / 12 * 4);
+    }
+
+    .col-5 {
+      width: calc(100% / 12 * 5);
+    }
+
+    .col-6 {
+      width: calc(100% / 12 * 6);
+    }
+
+    .col-7 {
+      width: calc(100% / 12 * 7);
+    }
+
+    .col-8 {
+      width: calc(100% / 12 * 8);
+    }
+
+    .col-9 {
+      width: calc(100% / 12 * 9);
+    }
+
+    .col-10 {
+      width: calc(100% / 12 * 10);
+    }
+
+    .col-11 {
+      width: calc(100% / 12 * 11);
+    }
+
+    .col-12 {
+      width: calc(100% / 12 * 12);
+    }
+
+    [class*='col'] {
+      float: left;
+      padding: 20px;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -31,34 +90,40 @@
   <script>
     const menu = [
       {
-        id: 2, //編號
-        title: "buttermilk pancakes", //食物名稱
+        id: 1, //編號
+        title: "間諜家家酒", //食物名稱
         category: "breakfast", //食物類別
-        price: 15.99, //價格
         img: "./img/anime/img0.jpg", //圖片連結
-        desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `, //說明
       },
       {
-        id: 1, //編號
-        title: "buttermilk pancakes", //食物名稱
-        category: "breakfast", //食物類別
-        price: 15.99, //價格
+        id: 2, //編號
+        title: "輝夜姬想讓人告白", //食物名稱
+        category: "food", //食物類別
         img: "./img/anime/img1.jpg", //圖片連結
-        desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `, //說明
+      },
+      {
+        id: 3, //編號
+        title: "新石記", //食物名稱
+        category: "diner", //食物類別
+        img: "./img/anime/img1.jpg", //圖片連結
+      },
+      {
+        id: 4, //編號
+        title: "炎炎消防隊", //食物名稱
+        category: "diner", //食物類別
+        img: "./img/anime/img1.jpg", //圖片連結
       },
     ];
     const container = document.querySelector('.btn-container');
     const sectionCenter = document.querySelector('.section-center');
     function displayMenuItems(menuItems) {
       let displayMenu = menuItems.map(function (item) {
-        return `<article class="menu-item">
+        return `<article class="menu-item col-3">
               <img src="${item.img}" class="photo" alt=${item.title}">
               <div class="item-info">
                 <header>
-                  <h4>${item.title}</h4>
-                  <h4 class="price">$${item.price}</h4>
+                  <h1>${item.title}</h1>
                 </header>
-                <p class="item-text">${item.desc}</p>
               </div>
             </article>`;
       });
@@ -68,6 +133,7 @@
     window.addEventListener('DOMContentLoaded', function () {
       displayMenuItems(menu);
     });
+    // 按鈕
     function displayMenuButtons() {
       const categores = menu.reduce(function (values, item) {
         if (!values.includes(item.category)) {
@@ -81,21 +147,21 @@
       container.innerHTML = categoryBtns;
       const filterBtns = container.querySelectorAll('.filter-btn');
       filterBtns.forEach(function (btn) { //選擇每個按鈕
+        // click事件
         btn.addEventListener('click', function (e) { //新增點擊事件
-          //details...
+          const category = e.currentTarget.dataset.id;
+          const menuCategory = menu.filter(function (menuItems) {
+            if (menuItems.category === category) { //判斷是否為被選取的類別
+              return menuItems; //回傳所需物件至menuCategory陣列中
+            };
+          });
+          if (category === "all") {
+            displayMenuItems(menu);
+          } else {
+            displayMenuItems(menuCategory);
+          };
         });
       });
-      const category = e.currentTarget.dataset.id;
-      const menuCategory = menu.filter(function (menuItems) {
-        if (menuItems.category === category) { //判斷是否為被選取的類別
-          return menuItems; //回傳所需物件至menuCategory陣列中
-        };
-      });
-      if (category === "all") {
-        displayMenuItems(menu);
-      } else {
-        displayMenuItems(menuCategory);
-      };
     };
     window.addEventListener('DOMContentLoaded', function () {
       displayMenuItems(menu); //預設顯示所有內容

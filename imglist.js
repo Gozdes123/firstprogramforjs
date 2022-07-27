@@ -105,6 +105,7 @@ const menu = [
         category: '奇幻',
         img: './img/anime/img17.jpg',
     },
+
 ];
 const container = document.querySelector('.btn-container');
 const sectionCenter = document.querySelector('.section-center');
@@ -165,6 +166,17 @@ function displayMenuButtons() {
             }
         });
     });
+}
+// 搜尋功能
+function clicked() {
+    let search = document.querySelector('#search').value;
+    const searchCategory = menu.filter(function (menuItems) {
+        if (menuItems.title.includes(search)) {
+            //判斷是否為被選取的類別
+            return menuItems; //回傳所需物件至menuCategory陣列中
+        }
+    });
+    displayMenuItems(searchCategory);
 }
 window.addEventListener('DOMContentLoaded', function () {
     displayMenuItems(menu); //預設顯示所有內容

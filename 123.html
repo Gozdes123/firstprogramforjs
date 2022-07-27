@@ -15,8 +15,47 @@
   <input class="search-bar" type="search" name="search" id="search" placeholder="輸入名稱">
   <button class="search-btn" onclick="clicked()">按我</button>
   <script>
+    const sectionCenter = document.querySelector('.section-center');
+    function displayMenuItems(menuItems) {
+      let displayMenu = menuItems.map(function (item) {
+        return `
+        <article class="menu-item col-2">
+              <img src="${item.img}" class="photo" alt=${item.title}">
+              <div class="item-info">
+                <header>
+                  <h1>${item.title}</h1>
+                  <i class="fa-solid fa-heart"></i>
+                </header>
+              </div>
+            </article>`;
+      });
+      displayMenu = displayMenu.join('');
+      sectionCenter.innerHTML = displayMenu;
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+      displayMenuItems(menu);
+    });
+    const menu = [
+      {
+        title: '間諜家家酒',
+        category: '奇幻',
+        img: './img/anime/img0.jpg',
+      },
+      {
+        title: '輝夜姬想讓人告白',
+        category: '愛情',
+        img: './img/anime/img1.jpg',
+      },]
+
     function clicked() {
-      alert("wwwe");
+      let search = document.querySelector('#search').value
+      const searchCategory = menu.filter(function (menuItems) {
+        if (menuItems.title.includes(search)) {
+          //判斷是否為被選取的類別
+          return menuItems; //回傳所需物件至menuCategory陣列中
+        }
+      });
+      displayMenuItems(searchCategory);
     }
   </script>
 </body>

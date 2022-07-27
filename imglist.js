@@ -95,7 +95,6 @@ const menu = [
         img: './img/anime/img15.jpg',
     },
     {
-
         title: '鬼滅之刃遊郭篇',
         category: '熱血',
         img: './img/anime/img16.jpg',

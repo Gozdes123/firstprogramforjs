@@ -161,8 +161,10 @@ function displayMenuButtons() {
             });
             if (category === '全部') {
                 displayMenuItems(menu);
+                    lightbox();
             } else {
                 displayMenuItems(menuCategory);
+                    lightbox();
             }
         });
     });
@@ -177,9 +179,11 @@ function clicked() {
         }
     });
     displayMenuItems(searchCategory);
+    lightbox();
 }
 window.addEventListener('DOMContentLoaded', function () {
     displayMenuItems(menu); //預設顯示所有內容
     displayMenuButtons(); //顯示按鈕與開啟其功能
 });
+
 

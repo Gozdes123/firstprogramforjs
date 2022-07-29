@@ -1,8 +1,3 @@
-window.addEventListener('DOMContentLoaded', function () {
-    Lightbox();
-    ToggleMenu();
-    CreatAuto();
-});
 function ToggleMenu() {
     var menu = document.getElementById('menu');
     if (menu.style.display == '' || menu.style.display == 'none') {
@@ -276,3 +271,8 @@ function Lightbox() {
         };
     }
 }
+window.addEventListener('DOMContentLoaded', function () {
+    Lightbox();
+    ToggleMenu();
+    CreatAuto();
+});

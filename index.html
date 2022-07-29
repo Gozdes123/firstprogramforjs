@@ -35,7 +35,7 @@
     </ul>
   </nav>
   <div class="container" id="hambugertoggle">
-    <a href="#" onclick="toggleMenu()" class="burgar_btn">
+    <a href="#" onclick="ToggleMenu()" class="burgar_btn">
       <i class="fas fa-bars"></i>
     </a>
     <ul id="menu">
@@ -165,114 +165,7 @@
       </div>
     </div>
   </footer>
-  <script src="./imglist.js"></script>
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById('menu');
-      if (menu.style.display == '' || menu.style.display == 'none') {
-        menu.style.display = 'block';
-      } else
-        menu.style.display = 'none';
-    }
-    //  輪播圖片
-    let index = 0;
-    let ImageCount = document.querySelectorAll(".carousel .container1 img").length
-    const bottom = document.querySelector(".carousel .bottom")
-    for (let i = 0; i < ImageCount; i++) {
-      const indicator = document.createElement("div")
-      indicator.classList.add("indicator")
-      indicator.id = "num" + i
-      indicator.onclick = () => SetIndex(i)
-      bottom.append(indicator)
-    }
-    // 自動輪播
-    function creatAuto() {
-      return setInterval(() => {
-        index++
-        refresh()
-      }, 5000);
-    }
-    function refresh() {
-      let orange = document.querySelectorAll(".indicator")
-      if (index < 0) {
-        index = ImageCount - 1
-      } else if (index >= ImageCount) {
-        index = 0
-      }
-      let ini = "num" + (index)
-      let carousel = document.querySelector(".carousel")
-      let width = getComputedStyle(carousel).width
-      width = Number(width.slice(0, -2))
-      carousel.querySelector(".container1").style.left = index * width * -1 + "px"
-      for (let k = 0; k < ImageCount; k++) {
-        orange[k].style.opacity = 0.3
-      }
-      document.getElementById(ini).style.opacity = 1
-    }
-    function LeftShift() {
-      index--;
-      refresh()
-    }
-    function RightShift() {
-      index++;
-      refresh()
-    }
-    function SetIndex(idx) {
-      index = idx
-      refresh()
-    }
-    let autoTimer = creatAuto()
-    let refreshWrapper = (func) => {
-      return function (...args) {
-        let result = func(...args)
-        autoTimer
-        refresh()
-      }
-    }
-    refresh()
-    // 顯示天數
-    let date = new Date();
-    let weekarray = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"]
-    function days() {
-      let week
-      if (date.getDay() == 1) {
-        week = weekarray[0];
-      } else {
-        week = weekarray[(date.getDay() - 1)];
-      }
-      let day = document.querySelector("." + week)
-      day.style.backgroundColor = "black";
-      day.style.color = "white";
-    }
-    days()
-    // 分類toggle
-    $(document).ready(function () {
-      $('.gateclick').click(function () {
-        $('.img_nav_content_outside').slideToggle('slow');
-      });
-    });
-    //圖片燈箱
-    function lightbox() {
-      var modal = document.getElementById("myModal");
-      var img = document.querySelectorAll('article img');
-      for (let j = 0; j < img.length; j++) {
-        var modalImg = document.getElementById("img01");
-        img[j].onclick = function () {
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
-          // When the user clicks on <span> (x), close the modal
-          span.onclick = function () {
-            modal.style.display = "none";
-          }
-        }
-      }
-    }
-    window.addEventListener('DOMContentLoaded', function () {
-      lightbox();
-    });
-  </script>
+  <script src="./function.js"></script>
 </body>
 
 </html>

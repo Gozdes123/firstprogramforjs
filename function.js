@@ -271,8 +271,24 @@ function Lightbox() {
         };
     }
 }
+function Showname() {
+    if (localStorage.getItem('root') !== null) {
+      document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
+    }else{
+            document.querySelector('.rename').textContent = "Login";
+    }
+}
+function Login() {
+  if (localStorage.getItem('root') !== null) {
+      localStorage.clear();
+      document.querySelector('.rename').textContent = 'Login';
+  }else{
+  window.location.href = './storge.html';
+  }
+}
 window.addEventListener('DOMContentLoaded', function () {
     Lightbox();
     ToggleMenu();
-    CreatAuto();
+    creatAuto();
+    Showname();
 });

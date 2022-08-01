@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  帳號<input type="text" name="" id="acc">
+  密碼<input type="text" name="" id="pass">
+  <button onclick="clicked()">註冊</button>
+  <button onclick="login()">登入</button>
+  <button onclick="cleared()">清除</button>
+  <script>
+    function clicked(params) {
+      let acc = document.getElementById('acc').value
+      let pass = document.getElementById('pass').value
+      localStorage.setItem(acc, pass)
+      localStorage.setItem("root", acc)
+    }
+    function login() {
+      let acc1 = document.getElementById('acc').value
+      let pass1 = document.getElementById('pass').value
+      let passwor = localStorage.getItem(acc1)
+      if (pass1 == passwor) {
+        alert("登入成功");
+        window.location.href = "./index.html";
+      }
+      else {
+        alert("登入失敗");
+      }
+    }
+    function cleared() {
+      localStorage.clear();
+    }
+  </script>
+</body>
+
+</html>

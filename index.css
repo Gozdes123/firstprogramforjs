@@ -9,13 +9,11 @@ body {
     box-sizing: border-box;
     font-family: '微軟正黑體';
 }
-
 .clearfix::after {
     content: '';
     display: block;
     clear: both;
 }
-
 body {
     width: 100%;
     overflow-x: hidden;
@@ -54,11 +52,9 @@ ul {
 .col-2 {
     width: calc(100% / 12 * 2);
 }
-
 .col-3 {
     width: calc(100% / 12 * 3);
 }
-
 .col-4 {
     width: calc(100% / 12 * 4);
 }
@@ -587,7 +583,6 @@ footer .icon {
         top: 1.8%;
         left: 101%;
     }
-
     .col-2 img {
         width: 320px;
         height: 440px;

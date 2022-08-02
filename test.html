@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="Reset()">清空</button>
+  <button onclick="Stor()">儲存</button>
+  <script>
+    const menu = [
+      {
+        title: '間諜家家酒',
+        category: '奇幻',
+        img: 'img/anime/img0.jpg',
+      },
+      {
+        title: '輝夜姬想讓人告白',
+        category: '愛情',
+        img: 'img/anime/img1.jpg',
+      },]
+    function Reset(params) {
+      localStorage.clear();
+    }
+    function Stor() {
+      let a = localStorage.setItem("a", JSON.stringify(menu))
+      let b = JSON.parse(localStorage.getItem("a"))
+      console.log(b[0].title);
+    }
+  </script>
+</body>
+
+</html>

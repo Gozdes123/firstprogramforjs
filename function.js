@@ -84,94 +84,130 @@ $(document).ready(function () {
 //圖片瀏覽
 const menu = [
     {
+        id:0,
         title: '間諜家家酒',
         category: '奇幻',
         img: 'img/anime/img0.jpg',
+        btn: 'btn0',
     },
     {
+        id:1,
         title: '輝夜姬想讓人告白',
         category: '愛情',
         img: 'img/anime/img1.jpg',
+        btn: 'btn1',
     },
     {
+        id:2,
         title: '新石記',
         category: '奇幻',
         img: 'img/anime/img2.jpg',
+        btn: 'btn2',
     },
     {
+        id:3,
         title: '炎炎消防隊',
         category: '熱血',
         img: 'img/anime/img3.jpg',
+        btn: 'btn3',
     },
     {
+        id:4,
         title: '歡迎來到實力至上主義的教室',
         category: '社會寫實',
         img: 'img/anime/img4.jpg',
+        btn: 'btn4',
     },
     {
+        id:5,
         title: '杜鵑的婚約',
         category: '幽默搞笑',
         img: 'img/anime/img5.jpg',
+        btn: 'btn5',
     },
     {
+        id:6,
         title: '盾之勇者成名錄',
         category: '奇幻',
         img: 'img/anime/img6.jpg',
+        btn: 'btn6',
     },
     {
+        id:7,
         title: '白領羽球部',
         category: '運動',
         img: 'img/anime/img7.jpg',
+        btn: 'btn7',
     },
     {
+        id:8,
         title: '國王排名',
         category: '奇幻',
         img: 'img/anime/img8.jpg',
+        btn: 'btn8',
     },
     {
+        id:9,
         title: '進擊的巨人',
         category: '驚悚',
         img: 'img/anime/img9.jpg',
+        btn: 'btn9',
     },
     {
+        id:10,
         title: '86不存在的戰區',
         category: '社會寫實',
         img: 'img/anime/img10.jpg',
+        btn: 'btn10',
     },
     {
+        id:11,
         title: '無職轉生',
         category: '冒險',
         img: 'img/anime/img11.jpg',
+        btn: 'btn11',
     },
     {
+        id:12,
         title: '咒術迴戰',
         category: '熱血',
         img: 'img/anime/img12.jpg',
+        btn: 'btn12',
     },
     {
+        id:13,
         title: 'Lycoris Recoil 莉可麗絲',
         category: '愛情',
         img: 'img/anime/img13.jpg',
+        btn: 'btn13',
     },
     {
+        id:14,
         title: '相合之物',
         category: '幽默搞笑',
         img: 'img/anime/img14.jpg',
+        btn: 'btn14',
     },
     {
+        id:15,
         title: '魔法科高中的劣等生追憶篇',
         category: '奇幻',
         img: 'img/anime/img15.jpg',
+        btn: 'btn15',
     },
     {
+        id:16,
         title: '鬼滅之刃遊郭篇',
         category: '熱血',
         img: 'img/anime/img16.jpg',
+        btn: 'btn16',
     },
     {
+        id:17,
         title: '宿命迴響',
         category: '奇幻',
         img: 'img/anime/img17.jpg',
+        btn: 'btn17',
     },
 ];
 const container = document.querySelector('.btn-container');
@@ -184,7 +220,7 @@ function displayMenuItems(menuItems) {
               <div class="item-info">
                 <header>
                   <h1>${item.title}</h1>
-                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i>
                 </header>
               </div>
             </article>`;
@@ -271,6 +307,18 @@ function Lightbox() {
         };
     }
 }
+// 我的最愛
+function loveclick(btnlight) {
+  let btn = "btn"+btnlight;
+  let btnstyle = (document.querySelector('.' + btn));
+  if (btnstyle.style.color == 'white' || btnstyle.style.color == '') {
+      btnstyle.style.color = 'red';
+    localStorage.setItem('btn' + btnlight, 'btn' + btnlight);
+  } else {
+      btnstyle.style.color = 'white';
+      localStorage.removeItem('btn' + btnlight);
+  }
+  }
 function Showname() {
     if (localStorage.getItem('root') !== null) {
       document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
@@ -291,4 +339,17 @@ window.addEventListener('DOMContentLoaded', function () {
     ToggleMenu();
     creatAuto();
     Showname();
+    document.querySelector('.btncolor').addEventListener(
+        'click',
+        function () {
+            for (let i = 0; i < menu.length; i++) {
+                let store = localStorage.getItem('btn' + i);
+                if (store !== null) {
+                    document.querySelector('.' + store).style.color = 'red';
+                }
+            }
+        },
+        false
+    );
+
 });

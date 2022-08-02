@@ -328,11 +328,11 @@
         function successAction() {
           localStorage.setItem(signUpName, signUpPassword)
           localStorage.setItem("root", signUpName)
-          alert('Created successfully, please go to sign in page')
+          alert('註冊成功請登入')
         }
 
-        if (signUpName.value === '' || signUpPassword.value === '') {
-          alert('The input box cannot be empty')
+        if (signUpName === "" || signUpPassword === "") {
+          alert('請填入帳號及密碼')
         } else {
           successAction()
         }

@@ -265,9 +265,11 @@ function displayMenuButtons() {
             if (category === '全部') {
                 displayMenuItems(menu);
                 Lightbox();
+                lovecolor();
             } else {
                 displayMenuItems(menuCategory);
                 Lightbox();
+                lovecolor();
             }
         });
     });
@@ -283,6 +285,7 @@ function clicked() {
     });
     displayMenuItems(searchCategory);
     Lightbox();
+    lovecolor();
 }
 window.addEventListener('DOMContentLoaded', function () {
     displayMenuItems(menu); //預設顯示所有內容
@@ -319,10 +322,22 @@ function loveclick(btnlight) {
       localStorage.removeItem('btn' + btnlight);
   }
   }
+function lovecolor() {
+        for(let i = 0 ; i<menu.length;i++)
+        {
+          let btn = 'btn' + i;
+          let dom = document.querySelector('.' + btn)
+          if (localStorage.getItem(btn) !== null && dom !== null) {
+              document.querySelector('.' + btn).style.color = 'red';
+          }
+        }
+}
+// 登入
 function Showname() {
     if (localStorage.getItem('root') !== null) {
       document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
-    }else{
+    }
+    else{
             document.querySelector('.rename').textContent = "Login";
     }
 }
@@ -330,26 +345,16 @@ function Login() {
   if (localStorage.getItem('root') !== null) {
       localStorage.clear();
       document.querySelector('.rename').textContent = 'Login';
-  }else{
-  window.location.href = './storge.html';
   }
+    else
+    {
+      window.location.href = 'storge.html';
+    }
 }
 window.addEventListener('DOMContentLoaded', function () {
     Lightbox();
     ToggleMenu();
     creatAuto();
     Showname();
-    document.querySelector('.btncolor').addEventListener(
-        'click',
-        function () {
-            for (let i = 0; i < menu.length; i++) {
-                let store = localStorage.getItem('btn' + i);
-                if (store !== null) {
-                    document.querySelector('.' + store).style.color = 'red';
-                }
-            }
-        },
-        false
-    );
-
+    lovecolor();
 });

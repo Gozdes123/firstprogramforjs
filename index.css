@@ -158,7 +158,7 @@ nav a:hover:after {
     color: white;
 }
 #hambugertoggle {
-    background-color: rgb(230, 230, 230);
+    background-color: rgba(61, 203, 255, 0.4);
     margin-top: 20px;
 }
 
@@ -176,7 +176,7 @@ nav a:hover:after {
     margin-top: 20px;
 }
 #menu li:hover {
-    background-color: rgb(115, 115, 115);
+    background-color: rgba(0, 187, 255, 0.4);
     color: white;
 }
 /* carousel */
@@ -375,25 +375,9 @@ input[type='button'] {
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 16px;
 }
-.col-2 {
-    position: relative;
-    overflow: hidden;
-    height: 360px;
-}
 .col-2 img {
     flex-shrink: 0;
     object-fit: cover;
-}
-.col-2 i {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 35px;
-    color: white;
-}
-.col-2 i:hover {
-    color: red;
-    transition: 2s;
 }
 /* 燈箱 */
 #myImg {
@@ -498,11 +482,11 @@ input[type='button'] {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
     }
-}
+} */
 /* footer */
 footer {
     height: 120px;
@@ -528,42 +512,90 @@ footer .icon {
     margin: 0;
     padding: 0;
 }
-@media only screen and (max-width: 790px) {
+/* 手機 */
+@media only screen and (max-width: 600px) {
+    body {
+        height: 700px;
+        background-color: rgba(253, 253, 253, 0.2);
+    }
+    nav {
+        display: none;
+    }
+    /* 輪播取消 */
+    .carousel {
+        display: none;
+    }
+    #days {
+        height: 350px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+    #days ul {
+        width: 1200px;
+    }
+    .modal-content {
+        width: 100%;
+    }
+    .col {
+        position: relative;
+        width: calc(100% / 12 * 6);
+        height: 250px;
+        float: left;
+        padding-left: 20px;
+        overflow: hidden;
+    }
+    .section-center {
+        height: 300px;
+        overflow-y: scroll;
+    }
+    .col img {
+        width: 120px;
+        height: 250px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+    .col i {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 30px;
+        color: white;
+    }
+    .footer-search {
+        background-color: #000000;
+        height: 80px;
+        position: absolute;
+    }
+    footer {
+        display: none;
+    }
+}
+/* 平板 */
+@media only screen and (min-width: 601px) {
     nav {
         display: none;
     }
 }
-@media only screen and (min-width: 1500px) {
+/* 筆電 */
+@media only screen and (min-width: 768px) {
+    nav {
+        display: none;
+    }
+}
+/*桌電 */
+@media only screen and (min-width: 992px) {
+    nav {
+        display: none;
+    }
+}
+/* 大螢幕 */
+@media only screen and (min-width: 1200px) {
     #hambugertoggle {
         display: none;
     }
-    .container_img .img_nav_ul .search {
-        position: absolute;
-        left: 78%;
-        top: 45%;
+    nav {
+        display: block;
     }
-    .container_img .img_nav_ul .search .search-btn {
-        border-radius: 10px;
-        width: 40px;
-        height: 40px;
-        background-color: black;
-        color: #efe9e7;
-        outline: none;
-        border: 2px solid #3d1101;
-        cursor: pointer;
-        position: absolute;
-        top: 1.8%;
-        left: 101%;
-    }
-    .col-2 img {
-        width: 100%;
-        height: 300px;
-        flex-shrink: 0;
-        object-fit: cover;
-    }
-}
-/* 超大螢幕 */
-@media only screen and (min-width: 2000px) {
     .container_img .img_nav_ul .search {
         position: absolute;
         left: 85%;
@@ -582,10 +614,24 @@ footer .icon {
         top: 1.8%;
         left: 101%;
     }
-    .col-2 img {
+    .col {
+        position: relative;
+        width: calc(100% / 12 * 2);
+        float: left;
+        padding-left: 20px;
+        overflow: hidden;
+    }
+    .col img {
         width: 320px;
         height: 440px;
         flex-shrink: 0;
         object-fit: cover;
+    }
+    .col i {
+        position: absolute;
+        top: 5px;
+        right: 0px;
+        font-size: 40px;
+        color: white;
     }
 }

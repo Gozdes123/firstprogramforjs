@@ -146,9 +146,9 @@ const menu = [
 ];
 function ToggleMenu() {
     var menu = document.getElementById('menu');
-    if (menu.style.display == '' || menu.style.display == 'none') {
-        menu.style.display = 'block';
-    } else menu.style.display = 'none';
+    if (menu.style.display == '' || menu.style.display == 'block') {
+        menu.style.display = 'none';
+    } else menu.style.display = 'block';
 }
 //  輪播圖片
 let index = 0;
@@ -246,7 +246,7 @@ const sectionCenter = document.querySelector('.section-center');
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
         return `
-        <article class="menu-item col-2">
+        <article class="menu-item col">
               <img src="${item.img}" class="photo" alt=${item.title}">
               <div class="item-info">
                 <header>

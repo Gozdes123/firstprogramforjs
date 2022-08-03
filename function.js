@@ -354,7 +354,6 @@ function Login() {
 window.addEventListener('DOMContentLoaded', function () {
     Lightbox();
     ToggleMenu();
-    creatAuto();
     Showname();
     lovecolor();
 });

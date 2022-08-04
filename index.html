@@ -27,7 +27,7 @@
   <nav class="container navbar">
     <ul class="float-nav clearfix">
       <li><a href="#">Anime</a></li>
-      <li><a href="#" class="rename" onclick="Login()"></a></li>
+      <li><a class="rename" onclick="Login()"></a></li>
       <li><a href="#">About Us</a></li>
       <li><a href="myfavorite.html">My Favorite</a></li>
       <li><a href="#">Recommend</a></li>
@@ -40,13 +40,13 @@
     </a>
     <ul id="menu">
       <li><a href="#">About Us</a></li>
-      <li><a href="#">My Favorite</a></li>
+      <li><a href="myfavorite.html">My Favorite</a></li>
       <li><a href="#">Recommend</a></li>
-      <li><a href="#">Login</a></li>
+      <li onclick="Login()"><a class="renamephone"></a></li>
     </ul>
   </div>
   <!-- 輪播  -->
-  <div class="carousel">
+  <div class=" carousel">
     <div class="container1">
       <img src="img/fd23e28f-f572-40de-9b74-110f4ebad0e1.jpeg" alt="">
       <img src="img/e6f83eda8535bc2d5bb221f9951bdtr5.png" alt="">
@@ -68,25 +68,25 @@
     </div>
     <div class="col-12" id="days">
       <ul>
-        <li>
+        <li id="Sun">
           <h1 class="date Sun">週日</h1>
           <h2 onclick="ScheduleVideo()">間諜家家酒</h2>
           <h2 onclick="ScheduleVideo()">輝夜姬想讓人告白</h2>
           <h2 onclick="ScheduleVideo()">新石記</h2>
         </li>
-        <li>
+        <li id="Mon">
           <h1 class="date Mon">週一</h1>
           <h2 onclick="ScheduleVideo()">炎炎消防隊</h2>
           <h2 onclick="ScheduleVideo()">歡迎來到實力至上主義的教室</h2>
           <h2 onclick="ScheduleVideo()">杜鵑的婚約</h2>
         </li>
-        <li>
+        <li id="Tue">
           <h1 class="date Tue">週二</h1>
           <h2 onclick="ScheduleVideo()">盾之勇者成名錄</h2>
           <h2 onclick="ScheduleVideo()">白領羽球部</h2>
           <h2 onclick="ScheduleVideo()">國王排名</h2>
         </li>
-        <li>
+        <li id="Wed">
           <h1 class="date Wed">週三</h1>
           <h2 onclick="ScheduleVideo()">進擊的巨人</h2>
           <h2 onclick="ScheduleVideo()">86不存在的戰區</h2>
@@ -95,18 +95,18 @@
           <h2 onclick="ScheduleVideo()">86不存在的戰區</h2>
           <h2 onclick="ScheduleVideo()">無職轉生</h2>
         </li>
-        <li>
+        <li id="Thr">
           <h1 class="date Thr">週四</h1>
           <h2 onclick="ScheduleVideo()">咒術迴戰</h2>
           <h2 onclick="ScheduleVideo()">Lycoris Recoil 莉可麗絲</h2>
           <h2 onclick="ScheduleVideo()">相合之物</h2>
         </li>
-        <li>
+        <li id="Fri">
           <h1 class="date Fri">週五</h1>
           <h2 onclick="ScheduleVideo()">魔法科高中的劣等生追憶篇</h2>
           <h2 onclick="ScheduleVideo()">鬼滅之刃遊郭篇</h2>
         </li>
-        <li>
+        <li id="Sat">
           <h1 class="date Sat">週六</h1>
           <h2 onclick="ScheduleVideo()">宿命迴響</h2>
         </li>
@@ -142,7 +142,7 @@
     </div>
   </div>
   <!-- The Modal -->
-  <div id=" myModal" class="modal">
+  <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <div class="col-12">
       <div class="col-6"><img class="modal-content" id="img01"></div>
@@ -150,10 +150,11 @@
     </div>
   </div>
   <div class="col-12 footer-search">
-    <div class="col-3">關於</div>
-    <div class="col-3">最愛</div>
-    <div class="col-3">推薦</div>
-    <div class="col-3">登入</div>
+    <div class="col-3 footer-search-bar1"><a href="#"><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+    <div class="col-3 footer-search-bar2"><a href="#"><i class="fa-solid fa-heart"></i></a></div>
+    <div class="col-3 footer-search-bar3"><a href="#"><i class="fa-solid fa-fire"></i></a></div>
+    <div class="col-3 footer-search-bar4"><a onclick="Login()"><i class="fa-solid fa-address-card"></i></a></div>
   </div>
   <footer class="col-12 clearfix">
     <div class="col-6">

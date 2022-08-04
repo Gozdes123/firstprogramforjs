@@ -217,7 +217,7 @@ function Days() {
         week = weekarray[date.getDay() - 1];
     }
     let day = document.querySelector('.' + week);
-    day.style.backgroundColor = 'black';
+    day.style.backgroundColor = ' rgba(255, 193, 142, 1)';
     day.style.color = 'white';
 }
 Days();
@@ -366,8 +366,10 @@ function lovecolor() {
 function Showname() {
     if (localStorage.getItem('root') !== null) {
         document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
+         document.querySelector('.renamephone').textContent = localStorage.getItem('root') + '/Logout';
     } else {
         document.querySelector('.rename').textContent = 'Login';
+         document.querySelector('.renamephone').textContent = 'Login';
     }
 }
 function Login() {

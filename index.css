@@ -3,12 +3,16 @@
 /* font-family: 'Klee One', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
 /* font-family: 'Kaisei HarunoUmi', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+/* font-family: 'Kosugi Maru', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+/* font-family: 'Mochiy Pop One', sans-serif; */
 :root {
     --primaryColor: #ff6a48;
 }
 body {
     height: 2000px;
-    background-color: #fae1ddb1;
+    background-color: #e3f2fd98;
 }
 * {
     box-sizing: border-box;
@@ -108,7 +112,7 @@ ul {
 
 /* nav */
 .navbar {
-    background-color: #ffb6a7b5;
+    background-color: #cae9ff;
     padding-top: 10px;
 }
 nav {
@@ -142,7 +146,6 @@ nav a:after {
 nav a:hover:after {
     width: 100%;
 }
-
 .float-nav li {
     float: right;
     position: relative;
@@ -162,7 +165,7 @@ nav a:hover:after {
     color: white;
 }
 #hambugertoggle {
-    background-color: rgba(61, 203, 255, 0.4);
+    background-color: #cae9ff;
     margin-top: 20px;
 }
 
@@ -257,7 +260,7 @@ nav a:hover:after {
     margin-left: 20px;
 }
 .schedule_col-12 h1 {
-    font-family: 'Klee One', cursive;
+    font-family: 'Kosugi Maru', sans-serif;
     text-align: center;
 }
 .schedule h2 {
@@ -268,12 +271,11 @@ nav a:hover:after {
     text-align: center;
     margin-top: 20px;
     border-bottom: 1px solid black;
-    background-color: #ffb6a7b5;
-    /* font-family: 'Orbitron', sans-serif; */
-    font-family: 'Kaisei HarunoUmi', serif;
+    background-color: #cae9ff;
+    font-family: 'Kosugi Maru', sans-serif;
 }
 .schedule h2:hover {
-    background-color: #fec99acb;
+    background-color: #32dbfd;
 }
 .schedule li {
     width: calc(100% / 7);
@@ -312,7 +314,7 @@ nav a:hover:after {
     background-color: white;
 }
 .container_img .img_nav_ul .search input::placeholder {
-    font-family: 'Noto Sans TC', sans-serif !important;
+    font-family: 'Klee One', cursive !important;
     color: black;
 }
 .container_img .img_nav_ul .search .search-btn {
@@ -331,6 +333,16 @@ nav a:hover:after {
 
 .gateclick {
     cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-color: #cae9ff;
+    border-radius: 20px;
+    border-color: rgba(255, 255, 255, 0);
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 20px;
+}
+.gateclick:hover {
+    background-color: #32dbfd;
 }
 .img_nav_content_outside {
     display: none;
@@ -346,11 +358,7 @@ nav a:hover:after {
     height: 50px;
     border-radius: 10px;
     background-color: white;
-    /* border-style: none; */
     cursor: pointer;
-}
-.img_nav_ul li input:hover {
-    background-color: #fec99acb;
 }
 .img_nav_content_ul li {
     list-style: none;
@@ -359,20 +367,15 @@ nav a:hover:after {
     padding-top: 10px;
 }
 .img_nav_content_ul li input {
-    width: 150px;
-    height: 50px;
     border-radius: 50px;
-    background-color: #ffb6a7b5;
+    background-color: #cae9ff;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 20px;
     border-style: none;
     cursor: pointer;
 }
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-input[type='button'] {
-    font-size: 18px;
-    font-family: 'Kaisei HarunoUmi', serif !important;
-}
 .img_nav_content_ul li input:hover {
-    background-color: #fec99acb;
+    background-color: #32dbfd;
 }
 #img_nav li {
     float: left;
@@ -503,7 +506,7 @@ input[type='button'] {
 /* footer */
 footer {
     height: 70px;
-    background-color: #ffb6a7b5;
+    background-color: #cae9ff;
     margin-top: 8px;
 }
 footer h1 {
@@ -514,7 +517,7 @@ footer h1 {
     line-height: 40px;
 }
 /* 手機 */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     body {
         height: 700px;
     }
@@ -613,9 +616,8 @@ footer h1 {
     }
     /* 底下手機導覽頁 */
     .footer-search {
-        background-color: rgba(61, 203, 255, 0.4);
+        background-color: #cae9ff;
         height: 60px;
-        color: #efe9e7;
         position: relative;
     }
     .footer-search a {
@@ -648,7 +650,7 @@ footer h1 {
     }
 }
 /* 平板*/
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
     /* 輪播 */
     .carousel {
         margin-top: 20px;
@@ -755,7 +757,7 @@ footer h1 {
         color: white;
     }
 }
-/* 大螢幕 */
+/* 筆電 */
 @media only screen and (min-width: 1200px) {
     #hambugertoggle {
         display: none;
@@ -818,5 +820,47 @@ footer h1 {
     }
     .footer-search {
         display: none;
+    }
+}
+@media only screen and (min-width: 1700px) {
+    /* 輪播 */
+    .carousel {
+        margin-top: 20px;
+        width: 100%;
+        height: 30%;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .col img {
+        width: 250px;
+        height: 350px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+    .col i {
+        position: absolute;
+        top: 3px;
+        left: 210px;
+        font-size: 35px;
+        color: white;
+    }
+}
+@media only screen and (min-width: 1900px) {
+    /* 輪播 */
+    .carousel {
+        margin-top: 20px;
+        width: 100%;
+        height: 35%;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .col i {
+        position: absolute;
+        top: 3px;
+        right: 25px;
+        font-size: 35px;
+        color: white;
     }
 }

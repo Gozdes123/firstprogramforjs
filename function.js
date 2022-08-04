@@ -133,7 +133,7 @@ const menu = [
         category: '熱血',
         img: 'img/anime/img16.jpg',
         btn: 'btn16',
-        src: 'https://www.youtube.com/embed/teStYG1phuA',
+        src: 'https://www.youtube.com/embed/rkgXMpU9Jgc',
     },
     {
         id: 17,
@@ -217,7 +217,7 @@ function Days() {
         week = weekarray[date.getDay() - 1];
     }
     let day = document.querySelector('.' + week);
-    day.style.backgroundColor = ' rgba(255, 193, 142, 1)';
+    day.style.backgroundColor = '#7bdff2';
     day.style.color = 'white';
 }
 Days();
@@ -250,8 +250,7 @@ function displayMenuItems(menuItems) {
               <img src="${item.img}" class="photo" alt=${item.title}">
               <div class="item-info">
                 <header>
-                  <h1>${item.title}</h1>
-                  <i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i>
+                  <h1>${item.title}<i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i></h1>
                 </header>
               </div>
             </article>`;

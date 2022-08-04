@@ -6,9 +6,249 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    /* global start */
+    @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+    /* font-family: 'Klee One', cursive; */
+    @import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap');
+    /* font-family: 'Kaisei HarunoUmi', serif; */
+    @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+    /* font-family: 'Kosugi Maru', sans-serif; */
+    @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+    /* font-family: 'Mochiy Pop One', sans-serif; */
+    :root {
+      --primaryColor: #ff6a48;
+    }
+
+    body {
+      height: 2000px;
+      background-color: #e3f2fd98;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: '微軟正黑體';
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ol,
+    ul,
+    li,
+    img {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* grid for desktop  */
+    .container {
+      width: 100%;
+    }
+
+    .col-1 {
+      width: calc(100% / 12 * 1);
+    }
+
+    .col-2 {
+      width: calc(100% / 12 * 2);
+    }
+
+    .col-3 {
+      width: calc(100% / 12 * 3);
+    }
+
+    .col-4 {
+      width: calc(100% / 12 * 4);
+    }
+
+    .col-5 {
+      width: calc(100% / 12 * 5);
+    }
+
+    .col-6 {
+      width: calc(100% / 12 * 6);
+    }
+
+    .col-7 {
+      width: calc(100% / 12 * 7);
+    }
+
+    .col-8 {
+      width: calc(100% / 12 * 8);
+    }
+
+    .col-9 {
+      width: calc(100% / 12 * 9);
+    }
+
+    .col-10 {
+      width: calc(100% / 12 * 10);
+    }
+
+    .col-11 {
+      width: calc(100% / 12 * 11);
+    }
+
+    .col-12 {
+      width: calc(100% / 12 * 12);
+    }
+
+    [class*='col'] {
+      float: left;
+      padding: 20px;
+    }
+
+    .nopa {
+      padding: 0 !important;
+    }
+
+    .no {
+      margin: 0 -15px;
+    }
+
+    /* nav */
+    .navbar {
+      background-color: #cae9ff;
+      padding-top: 10px;
+    }
+
+    nav {
+      width: 100vw;
+      padding-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      /* 移除項目符號 */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #003049;
+      /* 移除超連結顏色 */
+      display: block;
+      /* 讓 <a> 填滿 <li> */
+      font-size: 1.2rem;
+      padding: 10px;
+      text-decoration: none;
+      /* 移除超連結底線 */
+      position: relative;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* 滑鼠移到 <a> 時變成底線 */
+    nav a:after {
+      content: '';
+      bottom: -1px;
+      left: 0;
+      width: 0%;
+      border-bottom: 2px solid #000000;
+      transition: 0.4s;
+    }
+
+    nav a:hover:after {
+      width: 100%;
+    }
+
+    .float-nav li {
+      float: right;
+      position: relative;
+      right: 10%;
+      padding-left: 30px;
+    }
+
+    .float-nav a {
+      padding-right: 30px;
+    }
+
+    .float-nav li:first-child {
+      float: left;
+      left: 10%;
+    }
+
+    /* button */
+    .fas {
+      font-size: 30px;
+      color: white;
+    }
+
+    #hambugertoggle {
+      background-color: #cae9ff;
+      margin-top: 20px;
+    }
+
+    #menu {
+      display: none;
+    }
+
+    #menu a {
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    #menu li {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #menu li:hover {
+      background-color: rgba(0, 187, 255, 0.4);
+      color: white;
+    }
+
+  </style>
 </head>
 
 <body>
+  <!-- navbar -->
+  <nav class="container navbar">
+    <ul class="float-nav clearfix">
+      <li><a href="index.html">Anime</a></li>
+      <li><a class="rename" onclick="Login()"></a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#">Recommend</a></li>
+    </ul>
+  </nav>
+  <div class="container" id="hambugertoggle">
+    <a href="#" onclick="ToggleMenu()" class="burgar_btn">
+      <i class="fas fa-bars"></i>
+    </a>
+    <ul id="menu">
+      <li><a href="#">About Us</a></li>
+      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#">Recommend</a></li>
+      <li onclick="Login()"><a class="renamephone"></a></li>
+    </ul>
+  </div>
   <div class="section-center col-12">
     <!-- section-center -->
   </div>

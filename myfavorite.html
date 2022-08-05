@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css'
+    integrity='sha512-9nqhm3FWfB00id4NJpxK/wV1g9P2QfSsEPhSSpT+6qrESP6mpYbTfpC+Jvwe2XY27K5mLwwrqYuzqMGK5yC9/Q=='
+    crossorigin='anonymous' />
   <style>
     /* global start */
     @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
@@ -15,8 +18,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
     /* font-family: 'Kosugi Maru', sans-serif; */
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
-
     /* font-family: 'Mochiy Pop One', sans-serif; */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    /* font-family: 'Orbitron', sans-serif; */
     :root {
       --primaryColor: #ff6a48;
     }
@@ -28,7 +33,7 @@
 
     * {
       box-sizing: border-box;
-      font-family: '微軟正黑體';
+      /* font-family: '微軟正黑體'; */
     }
 
     .clearfix::after {
@@ -202,6 +207,7 @@
     #hambugertoggle {
       background-color: #cae9ff;
       margin-top: 20px;
+      display: none;
     }
 
     #menu {
@@ -223,6 +229,40 @@
     #menu li:hover {
       background-color: rgba(0, 187, 255, 0.4);
       color: white;
+    }
+
+    .col {
+      position: relative;
+      width: calc(100% / 12 * 2);
+      float: left;
+      padding-left: 20px;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .col img {
+      width: 180px;
+      height: 300px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .col i {
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      font-size: 35px;
+      color: white;
+    }
+
+    .col i:hover {
+      color: red;
+      transition: 2s;
+    }
+
+    .section-center h1 {
+      font-family: 'Kaisei HarunoUmi', serif;
+      font-size: 16px;
     }
 
   </style>
@@ -386,7 +426,7 @@
     function displayMenuItems(menuItems) {
       let displayMenu = menuItems.map(function (item) {
         return `
-        <article class="menu-item col-2">
+        <article class="menu-item col">
               <img src="${item.img}" class="photo" alt=${item.title}">
               <div class="item-info">
                 <header>
@@ -414,6 +454,47 @@
     }
     window.addEventListener('DOMContentLoaded', function () {
       test()
+    });
+    function Showname() {
+      if (localStorage.getItem('root') !== null) {
+        document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
+        document.querySelector('.renamephone').textContent = localStorage.getItem('root') + '/Logout';
+      } else {
+        document.querySelector('.rename').textContent = 'Login';
+        document.querySelector('.renamephone').textContent = 'Login';
+      }
+    }
+    function Login() {
+      if (localStorage.getItem('root') !== null) {
+        localStorage.clear();
+        document.querySelector('.rename').textContent = 'Login';
+      } else {
+        window.location.href = 'storge.html';
+      }
+    }
+    function loveclick(btnlight) {
+      let btn = 'btn' + btnlight;
+      let btnstyle = document.querySelector('.' + btn);
+      if (btnstyle.style.color == 'white' || btnstyle.style.color == '') {
+        btnstyle.style.color = 'red';
+        localStorage.setItem('btn' + btnlight, 'btn' + btnlight);
+      } else {
+        btnstyle.style.color = 'white';
+        localStorage.removeItem('btn' + btnlight);
+      }
+    }
+    function lovecolor() {
+      for (let i = 0; i < menu.length; i++) {
+        let btn = 'btn' + i;
+        let dom = document.querySelector('.' + btn);
+        if (localStorage.getItem(btn) !== null && dom !== null) {
+          document.querySelector('.' + btn).style.color = 'red';
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', function () {
+      Showname();
+      lovecolor()
     });
   </script>
 </body>

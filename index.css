@@ -16,7 +16,7 @@ body {
 }
 * {
     box-sizing: border-box;
-    font-family: '微軟正黑體';
+    /* font-family: '微軟正黑體'; */
 }
 .clearfix::after {
     content: '';
@@ -125,7 +125,7 @@ nav ul {
     padding: 0;
 }
 nav a {
-    color: #003049; /* 移除超連結顏色 */
+    color: #003049;
     display: block; /* 讓 <a> 填滿 <li> */
     font-size: 1.2rem;
     padding: 10px;
@@ -315,7 +315,7 @@ nav a:hover:after {
     background-color: white;
 }
 .container_img .img_nav_ul .search input::placeholder {
-    font-family: 'Klee One', cursive !important;
+    font-family: 'Kosugi Maru', sans-serif;
     color: black;
 }
 .container_img .img_nav_ul .search .search-btn {
@@ -415,7 +415,7 @@ nav a:hover:after {
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 100px;
+    padding-top: 0px;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -602,18 +602,26 @@ footer h1 {
         height: 300px;
         overflow-y: scroll;
     }
+    .img-heart {
+        position: relative;
+    }
     .col img {
-        width: 150px;
+        width: 100%;
         height: 250px;
         flex-shrink: 0;
         object-fit: cover;
     }
     .col i {
         position: absolute;
+        padding: 0;
         top: 5px;
-        right: 10px;
+        right: 5px;
         font-size: 30px;
         color: white;
+    }
+    .col i:hover {
+        color: red;
+        transition: 2s;
     }
     /* 底下手機導覽頁 */
     .footer-search {
@@ -732,7 +740,6 @@ footer h1 {
         left: 101%;
     }
     .col {
-        position: relative;
         width: calc(100% / 12 * 3);
         height: 300px;
         float: left;
@@ -744,16 +751,24 @@ footer h1 {
         height: 300px;
         overflow-y: scroll;
     }
+    .img-heart {
+        position: relative;
+    }
     .col img {
-        width: 150px;
+        width: 100%;
         height: 250px;
         flex-shrink: 0;
         object-fit: cover;
     }
+    .col i:hover {
+        color: red;
+        transition: 2s;
+    }
     .col i {
         position: absolute;
+        padding: 0;
         top: 5px;
-        right: 10px;
+        right: 5px;
         font-size: 30px;
         color: white;
     }
@@ -795,22 +810,25 @@ footer h1 {
     }
 
     .col {
-        position: relative;
         width: calc(100% / 12 * 2);
         float: left;
         padding-left: 20px;
         overflow: hidden;
         height: 400px;
     }
+    .img-heart {
+        position: relative;
+    }
     .col img {
-        width: 180px;
+        width: 100%;
         height: 300px;
         flex-shrink: 0;
         object-fit: cover;
     }
     .col i {
         position: absolute;
-        top: 3px;
+        padding: 0;
+        top: 5px;
         right: 5px;
         font-size: 35px;
         color: white;
@@ -818,6 +836,14 @@ footer h1 {
     .col i:hover {
         color: red;
         transition: 2s;
+    }
+    #caption {
+        background-color: #5a5a5a92;
+        height: 600px;
+    }
+    #caption a {
+        font-size: 20px;
+        text-align: center;
     }
     .footer-search {
         display: none;
@@ -833,16 +859,24 @@ footer h1 {
         border-radius: 16px;
         overflow: hidden;
     }
+    .img-heart {
+        position: relative;
+    }
     .col img {
-        width: 250px;
-        height: 350px;
+        width: 100%;
+        height: 300px;
         flex-shrink: 0;
         object-fit: cover;
     }
+    .col i:hover {
+        color: red;
+        transition: 2s;
+    }
     .col i {
         position: absolute;
-        top: 3px;
-        left: 210px;
+        padding: 0;
+        top: 5px;
+        right: 5px;
         font-size: 35px;
         color: white;
     }
@@ -857,10 +891,24 @@ footer h1 {
         border-radius: 16px;
         overflow: hidden;
     }
+    .img-heart {
+        position: relative;
+    }
+    .col img {
+        width: 100%;
+        height: 300px;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+    .col i:hover {
+        color: red;
+        transition: 2s;
+    }
     .col i {
         position: absolute;
-        top: 3px;
-        right: 25px;
+        padding: 0;
+        top: 5px;
+        right: 5px;
         font-size: 35px;
         color: white;
     }

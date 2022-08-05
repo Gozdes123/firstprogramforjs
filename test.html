@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="GBK">
+  <title>隱藏功能</title>
+</head>
+
+<body>
+  <div id="d1">
+    <div id="fullText">
+      以前鏗鏘有力的靈魂之聲，不知道什麼時候，被默默沉寂在心底。渴望著黑夜裡，能有一雙巨大有力的手，將我的冰冷握緊。在這些安靜的日子裡，一個人無言無語，對著擱置了很久的書，認真的翻閱起來。裡面的一些話語，帶著禪意，讓人頓悟，豁然開明。
+    </div>
+    <div id="subText"></div><a id="btn" onclick="change()"></a>
+  </div>
+  <script>
+    var text;
+    function show() {
+      text = document.getElementById("fullText").innerHTML;
+      document.getElementById("fullText").innerHTML = "";
+      document.getElementById("subText").style.float = "left";
+      document.getElementById("btn").style.float = "left";
+      if (text.length > 9) {
+        document.getElementById("subText").innerHTML = text.substring(0, 9);
+        document.getElementById("btn").innerHTML = "...顯示全部";
+      } else {
+        document.getElementById("subText").innerHTML = text;
+        document.getElementById("btn").innerHTML = "";
+      }
+    }
+    function change() {
+      var t = document.getElementById("btn");
+      var tt = document.getElementById("subText");
+      if (t.innerHTML == "...顯示全部") {
+        tt.innerHTML = text;
+        t.innerHTML = "收起"
+      } else {
+        tt.innerHTML = text.substring(0, 9);
+        t.innerHTML = "...顯示全部"
+      }
+    }
+    show();
+
+  </script>
+</body>
+
+</html>

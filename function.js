@@ -6,6 +6,8 @@ const menu = [
         img: 'img/anime/img0.jpg',
         btn: 'btn0',
         src: 'https://www.youtube.com/embed/l1uINfUshjc',
+        content:
+            '《SPY×FAMILY間諜家家酒》（日語：スパイファミリー，英語：SPY×FAMILY，中國大陸譯作「間諜過家家」）是由日本漫畫家遠藤達哉所創作的作品，在2019年3月25日起於日本《少年Jump+》上定期連載，台灣於《寶島少年EX》上連載。本作敘述一名身為間諜的男性、另一位實際工作是殺手的女性，以及一個能讀心的超能力者女孩，三人互相隱瞞真實身分所組成的虛假家庭間的家庭喜劇。《SPY×FAMILY間諜家家酒》在2020年版的《這本漫畫真厲害！》贏得男生篇第一名。截至2022年5月，累積發行量突破2100萬冊。2021年11月1日宣佈改編電視動畫，由WIT STUDIO與CloverWorks製作，2022年4月起分上下兩季首度播出。',
     },
     {
         id: 1,
@@ -14,6 +16,8 @@ const menu = [
         img: 'img/anime/img1.jpg',
         btn: 'btn1',
         src: 'https://www.youtube.com/embed/1SNeGbYaZkw',
+        content:
+            '《輝夜姬想讓人告白～天才們的戀愛頭腦戰～》（日語：かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜），官方簡稱《輝夜姬》（日語：かぐや様），是日本漫畫家赤坂明的校園漫畫作品，起初於日本漫畫雜誌《Miracle Jump》2015年6月號至2016年2月號連載；後移籍至《週刊YOUNG JUMP》，於2016年17號開始連載。漫畫被改編為各種系列的衍生作品，包括同名的動畫、電影、小說等周邊媒體產品。至2022年止，已發行25冊。截至2022年3月，本系列作的累計發行量已超過1750萬冊。漫畫改編電視動畫由A-1 Pictures製作，第1季於2019年1月至3月播出；第2季於2020年4月至6月播出；2021年5月19日發售第2季OVA。2020年10月25日宣布第3期動畫製作確定，於2022年4月9日播出。2017年8月，在第三屆《下一部漫畫大賞》漫畫部門以11,884張的票數獲得第一名。2020年1月，榮獲第65屆《小學館漫畫賞》一般向部門獎，為《週刊YOUNG JUMP》創刊52年來唯一獲得此獎的作品。2020年3月，榮獲2019年BOOK☆WALKER大賞第一名。作品的人物多參考自《竹取物語》，部分人物關係亦與其故事內容呼應。',
     },
     {
         id: 2,
@@ -22,6 +26,8 @@ const menu = [
         img: 'img/anime/img2.jpg',
         btn: 'btn2',
         src: 'https://www.youtube.com/embed/oStI21bhOEA',
+        content:
+            '《Dr.STONE 新石紀》（日語：ドクターストーン），是日本漫畫家稻垣理一郎（原作）和Boichi（作畫）創作的一部少年科學漫畫作品，該作於2017年3月在日本集英社漫畫雜誌《週刊少年Jump》上連載，至2022年3月連載結束。2019年7月5日開始播映同名電視動畫。漫畫家Boichi在《週刊少年Jump》第48期同時連載獨自創作番外篇作品《Dr.STONE reboot：百夜》，2019年10月28日開始連載，稻垣理一郎於自己的Twitter上提到此外傳系列預計共9話。在2019年12月13日，動畫第1季結束時，宣布製作第2季。動畫第2季於2021年1月14日開播。在2021年12月19日，2022年夏預定開播動畫特別篇《Dr.STONE 新石紀 龍水。並在同時，宣布將製作動畫第3季於2023年春預定開播。',
     },
     {
         id: 3,
@@ -30,6 +36,7 @@ const menu = [
         img: 'img/anime/img3.jpg',
         btn: 'btn3',
         src: 'https://www.youtube.com/embed/fwtm_DVGwUQ',
+        content: '',
     },
     {
         id: 4,
@@ -38,6 +45,7 @@ const menu = [
         img: 'img/anime/img4.jpg',
         btn: 'btn4',
         src: 'https://www.youtube.com/embed/oQBdbfjHvjM',
+        content: '',
     },
     {
         id: 5,
@@ -46,6 +54,7 @@ const menu = [
         img: 'img/anime/img5.jpg',
         btn: 'btn5',
         src: 'https://www.youtube.com/embed/nLkXDK0WjV0',
+        content: '',
     },
     {
         id: 6,
@@ -54,6 +63,7 @@ const menu = [
         img: 'img/anime/img6.jpg',
         btn: 'btn6',
         src: 'https://www.youtube.com/embed/VxNNQlJkOjU',
+        content: '',
     },
     {
         id: 7,
@@ -62,6 +72,7 @@ const menu = [
         img: 'img/anime/img7.jpg',
         btn: 'btn7',
         src: 'https://www.youtube.com/embed/cBqbxUmI3Rc',
+        content: '',
     },
     {
         id: 8,
@@ -70,6 +81,7 @@ const menu = [
         img: 'img/anime/img8.jpg',
         btn: 'btn8',
         src: 'https://www.youtube.com/embed/P_dPJBjqguo',
+        content: '',
     },
     {
         id: 9,
@@ -78,6 +90,7 @@ const menu = [
         img: 'img/anime/img9.jpg',
         btn: 'btn9',
         src: 'https://www.youtube.com/embed/_WwIAUXZa7k',
+        content: '',
     },
     {
         id: 10,
@@ -86,6 +99,7 @@ const menu = [
         img: 'img/anime/img10.jpg',
         btn: 'btn10',
         src: 'https://www.youtube.com/embed/DxgEqj9oTWY',
+        content: '',
     },
     {
         id: 11,
@@ -94,6 +108,7 @@ const menu = [
         img: 'img/anime/img11.jpg',
         btn: 'btn11',
         src: 'https://www.youtube.com/embed/IrT9ZnXW3-Y',
+        content: '',
     },
     {
         id: 12,
@@ -102,6 +117,7 @@ const menu = [
         img: 'img/anime/img12.jpg',
         btn: 'btn12',
         src: 'https://www.youtube.com/embed/QH--l_kJ2lE',
+        content: '',
     },
     {
         id: 13,
@@ -110,6 +126,7 @@ const menu = [
         img: 'img/anime/img13.jpg',
         btn: 'btn13',
         src: 'https://www.youtube.com/embed/uHwCrkoYh3w',
+        content: '',
     },
     {
         id: 14,
@@ -118,6 +135,7 @@ const menu = [
         img: 'img/anime/img14.jpg',
         btn: 'btn14',
         src: 'https://www.youtube.com/embed/5876SRv2rWM',
+        content: '',
     },
     {
         id: 15,
@@ -126,6 +144,7 @@ const menu = [
         img: 'img/anime/img15.jpg',
         btn: 'btn15',
         src: 'https://www.youtube.com/embed/_C_jznWcHuA',
+        content: '',
     },
     {
         id: 16,
@@ -134,6 +153,7 @@ const menu = [
         img: 'img/anime/img16.jpg',
         btn: 'btn16',
         src: 'https://www.youtube.com/embed/rkgXMpU9Jgc',
+        content: '',
     },
     {
         id: 17,
@@ -142,6 +162,7 @@ const menu = [
         img: 'img/anime/img17.jpg',
         btn: 'btn17',
         src: 'https://www.youtube.com/embed/VuQPngzh5f8',
+        content: '',
     },
 ];
 function ToggleMenu() {
@@ -247,10 +268,11 @@ function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
         return `
         <article class="menu-item col">
-              <img src="${item.img}" class="photo" alt=${item.title}">
+        <div class="img-heart"><img src="${item.img}" class="photo" alt=${item.title}">
+        <i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i></div>
               <div class="item-info">
                 <header>
-                  <h1>${item.title}<i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i></h1>
+                  <h1>${item.title}</h1>
                 </header>
               </div>
             </article>`;
@@ -328,18 +350,47 @@ function Lightbox() {
     var img = document.querySelectorAll('article img');
     for (let j = 0; j < img.length; j++) {
         var modalImg = document.getElementById('img01');
+        let modalContent = menu[j].content;
         img[j].onclick = function () {
+          console.log(this.alt)
             modal.style.display = 'block';
             modalImg.src = this.src;
+            document.querySelector('#caption').innerHTML = modalContent + `<div id="subText"></div><a id="btnn" onclick="change()"></a>`;
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName('close')[0];
             // When the user clicks on <span> (x), close the modal
             span.onclick = function () {
                 modal.style.display = 'none';
             };
+
         };
     }
 }
+   var text;
+   function show() {
+       text = document.getElementById('caption').innerHTML;
+       document.getElementById('caption').innerHTML = '';
+       if (text.length > 9) {
+        alert("有9個")
+           document.getElementById('subText').innerHTML = text.substring(0, 9);
+           document.getElementById('btnn').innerHTML = '...顯示全部';
+       } else {
+        alert('沒有9個');
+           document.getElementById('subText').innerHTML = text;
+           document.getElementById('btnn').innerHTML = '';
+       }
+   }
+   function change() {
+       var t = document.getElementById('btnn');
+       var tt = document.getElementById('subText');
+       if (t.innerHTML == '...顯示全部') {
+           tt.innerHTML = text;
+           t.innerHTML = '收起';
+       } else {
+           tt.innerHTML = text.substring(0, 9);
+           t.innerHTML = '...顯示全部';
+       }
+   }
 // 我的最愛
 function loveclick(btnlight) {
     let btn = 'btn' + btnlight;
@@ -361,6 +412,7 @@ function lovecolor() {
         }
     }
 }
+
 // 登入
 function Showname() {
     if (localStorage.getItem('root') !== null) {

@@ -268,7 +268,7 @@ function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
         return `
         <article class="menu-item col">
-        <div class="img-heart"><img src="${item.img}" class="photo" alt=${item.title}">
+        <div class="img-heart"><img src="${item.img}" class="photo${item.id}" alt=${item.title} onclick = "Lightbox(${item.id})"">
         <i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i></div>
               <div class="item-info">
                 <header>
@@ -343,54 +343,57 @@ window.addEventListener('DOMContentLoaded', function () {
     displayMenuItems(menu); //預設顯示所有內容
     displayMenuButtons(); //顯示按鈕與開啟其功能
 });
-
-//圖片燈箱
-function Lightbox() {
+// 燈箱
+function Lightbox(number) {
+    let picture = 'photo' + number;
     var modal = document.getElementById('myModal');
-    var img = document.querySelectorAll('article img');
-    for (let j = 0; j < img.length; j++) {
-        var modalImg = document.getElementById('img01');
-        let modalContent = menu[j].content;
-        img[j].onclick = function () {
-          console.log(this.alt)
-            modal.style.display = 'block';
-            modalImg.src = this.src;
-            document.querySelector('#caption').innerHTML = modalContent + `<div id="subText"></div><a id="btnn" onclick="change()"></a>`;
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName('close')[0];
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = 'none';
-            };
-
-        };
-    }
+    var modalImg = document.getElementById('img01');
+    var pictureno = document.getElementsByClassName(picture);
+    const pictureCategory = menu.filter(function (menuItems) {
+           if (menuItems.id == number) {
+               return menuItems;
+           }
+       });
+       if (pictureCategory[0] !== undefined) {
+       var modalImg = document.getElementById('img01');
+       let modalContent = pictureCategory[0].content;
+       modal.style.display = 'block';
+       modalImg.src = pictureCategory[0].img;
+       document.querySelector('#caption').innerHTML = modalContent;
+       // Get the <span> element that closes the modal
+       var span = document.getElementsByClassName('close')[0];
+       // When the user clicks on <span> (x), close the modal
+       span.onclick = function () {
+           modal.style.display = 'none';
+       };
+      }
+      showLow();
 }
-   var text;
-   function show() {
-       text = document.getElementById('caption').innerHTML;
-       document.getElementById('caption').innerHTML = '';
-       if (text.length > 9) {
-        alert("有9個")
-           document.getElementById('subText').innerHTML = text.substring(0, 9);
-           document.getElementById('btnn').innerHTML = '...顯示全部';
-       } else {
-        alert('沒有9個');
-           document.getElementById('subText').innerHTML = text;
-           document.getElementById('btnn').innerHTML = '';
-       }
-   }
-   function change() {
-       var t = document.getElementById('btnn');
-       var tt = document.getElementById('subText');
-       if (t.innerHTML == '...顯示全部') {
-           tt.innerHTML = text;
-           t.innerHTML = '收起';
-       } else {
-           tt.innerHTML = text.substring(0, 9);
-           t.innerHTML = '...顯示全部';
-       }
-   }
+ var text;
+ function showLow() {
+     text = document.getElementById('caption').innerHTML;
+     document.getElementById('caption').innerHTML =`<div id="subText"></div><a id="btn" onclick="change()"></a>`;
+     document.getElementById('subText').style.float = 'left';
+     document.getElementById('btn').style.float = 'left';
+     if (text.length > 9) {
+         document.getElementById('subText').innerHTML = text.substring(0, 9);
+         document.getElementById('btn').innerHTML = '...顯示全部';
+     } else {
+         document.getElementById('subText').innerHTML = text;
+         document.getElementById('btn').innerHTML = '';
+     }
+ }
+ function change() {
+     var t = document.getElementById('btn');
+     var tt = document.getElementById('subText');
+     if (t.innerHTML == '...顯示全部') {
+         tt.innerHTML = text;
+         t.innerHTML = '收起';
+     } else {
+         tt.innerHTML = text.substring(0, 9);
+         t.innerHTML = '...顯示全部';
+     }
+ }
 // 我的最愛
 function loveclick(btnlight) {
     let btn = 'btn' + btnlight;

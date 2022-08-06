@@ -16,13 +16,16 @@
 
     #logout {
       margin-right: 0;
-      font-size: 25px;
+      font-size: 40px;
       cursor: pointer;
-      color: rgb(248, 188, 35);
+      color: #59a5d8;
+      position: absolute;
+      bottom: 320px;
+      left: 300px;
     }
 
     .container {
-      width: 700px;
+      width: 350px;
       height: 500px;
       border-radius: 30px;
       display: flex;
@@ -40,57 +43,12 @@
     .lightbluebox {
       width: 350px;
       height: 500px;
-      background-color: rgb(233, 239, 245);
+      background-color: #cae9ff;
       transition: .5s;
       display: flex;
       align-items: center;
       overflow: hidden;
       position: relative;
-    }
-
-    .yellowbox {
-      background-color: rgb(248, 188, 35);
-      width: 350px;
-      height: 500px;
-      transition: .5s;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hello {
-      width: 310px;
-      text-align: center;
-      color: white;
-      padding: 20px;
-      position: absolute;
-      transition: .5s;
-    }
-
-    .welcome {
-      width: 310px;
-      text-align: center;
-      color: white;
-      padding: 20px;
-      position: absolute;
-      left: -350px;
-      transition: .5s;
-    }
-
-    .signup-btn {
-      margin-top: 20px;
-      background: rgb(248, 188, 35);
-      border-radius: 20px;
-      border-top: rgb(247, 194, 61) solid 5px;
-      border-left: rgb(247, 194, 61) solid 2px;
-      border-right: none;
-      border-bottom: none;
-      padding: 0;
-      cursor: pointer;
-      outline-offset: 4px;
-      box-shadow: 0 8px 2px rgb(248 188 35), 2px 8px 2px rgb(151, 119, 38);
     }
 
     .signup-btn .front {
@@ -105,16 +63,17 @@
 
     .signin-btn {
       margin-top: 20px;
-      background: rgb(233, 239, 245);
+      background: #59a5d8;
       border-radius: 20px;
-      border-top: rgb(208, 216, 224) solid 3px;
+      border-top: #59a5d8 solid 3px;
       border-left: none;
       border-right: none;
       border-bottom: none;
       padding: 0;
       cursor: pointer;
       outline-offset: 4px;
-      box-shadow: 0 8px 2px rgb(233, 239, 245), 2px 9px 2px rgb(115, 119, 122);
+      box-shadow: 0 8px 2px #59a5d8, 2px 9px 2px #addeff;
+      margin-left: 15px;
     }
 
     .signin-btn .front {
@@ -122,7 +81,7 @@
       padding: 15px 42px 10px 42px;
       border-radius: 20px;
       font-size: 1.25rem;
-      background: rgb(233, 239, 245);
+      background: #59a5d8;
       transform: translateY(-2px);
     }
 
@@ -132,20 +91,6 @@
       text-align: center;
       position: absolute;
       transition: .5s;
-    }
-
-    .signup-box {
-      width: 100%;
-      margin: auto;
-      text-align: center;
-      position: absolute;
-      left: -350px;
-      transition: .5s;
-    }
-
-    .input-group {
-      display: flex;
-      flex-direction: column;
     }
 
     .input-group input {
@@ -159,39 +104,6 @@
       padding: 5px;
     }
 
-    .signin-btn:active .front,
-    .signup-btn:active .front {
-      transform: translateY(-1px);
-    }
-
-    .right,
-    .InBoxRight {
-      transform: translate(350px, 0)
-    }
-
-    .left {
-      transform: translate(-350px, 0)
-    }
-
-    .InBoxLeft {
-      transform: translate(0px, 0)
-    }
-
-    .third-party-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
-      font-size: 1.25rem;
-      cursor: pointer;
-      background: rgb(233, 239, 245);
-      border: solid 1px rgb(208, 216, 224);
-      transform: translateY(-4px);
-    }
-
-    .third-party-btn:active span i {
-      transform: translateY(-2px);
-    }
-
   </style>
 </head>
 
@@ -199,141 +111,48 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <div class="board">
-    <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i></a>
     <div class="container">
       <div class="lightbluebox">
         <div class="login-box">
-          <h1>Sign in</h1>
-          <div class="third-party-box">
-            <button class="third-party-btn"><span><i class="fab fa-facebook-f"></i></span></button>
-            <button class="third-party-btn"><span><i class="fab fa-google-plus-g"></i></span></button>
-            <button class="third-party-btn"><span><i class="fab fa-github"></i></span></button>
-          </div>
-          <h4>or use your account</h4>
+          <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i></a>
+          <h1>登入</h1>
           <div class="input-group">
             <input id="loginEmail" type="text" placeholder="Account">
             <input id="loginPassword" type="password" placeholder="Password">
           </div>
           <button id="loginBtn" class="signin-btn">
-            <span class="front">SIGN IN</span>
+            <span class="front">登錄</span>
           </button>
-        </div>
-        <div class="signup-box">
-          <h1>Ceate Account</h1>
-          <div class="third-party-box">
-            <button class="third-party-btn"><span><i class="fab fa-facebook-f"></i></span></button>
-            <button class="third-party-btn"><span><i class="fab fa-google-plus-g"></i></span></button>
-            <button class="third-party-btn"><span><i class="fab fa-github"></i></span></button>
-          </div>
-          <h4>or use your email for registration</h4>
-          <div class="input-group">
-            <input id="signUpName" type="text" placeholder="Account">
-            <input id="signUpPassword" type="password" placeholder="Password">
-          </div>
           <button id="signUpBtn" class="signin-btn">
-            <span class="front">SIGN UP</span>
-          </button>
-        </div>
-      </div>
-      <div class="yellowbox">
-        <div class="hello">
-          <div class="textcontent">
-            <h1 class="sayHi">Hello, Friend !</h1>
-            <span>Enter your personal details and start journey with us</span>
-          </div>
-          <button class="signup-btn">
-            <span class="front">SIGN UP</span>
-          </button>
-        </div>
-        <div class="welcome">
-          <div class="textcontent">
-            <h1>Welcome Back !</h1>
-            <span>Too keep connected with us please login with your personal info</span>
-          </div>
-          <button class="signup-btn">
-            <span class="front">SIGN IN</span>
+            <span class="front">註冊</span>
           </button>
         </div>
       </div>
     </div>
   </div>
   <script>
-    function firstRnder() {
-      const sayHiElement = document.querySelector('.sayHi')
-      const storageMemory = localStorage.getItem('MemoryAccount')
-      let status = localStorage.getItem('status')
-      !status && localStorage.setItem('status', 'login')
-      if (storageMemory) {
-        sayHiElement.textContent = storageMemory
-      }
-      changePage()
-    }
-
-    function changePage(e) {
-      const yellowBox = document.querySelector('.yellowbox')
-      const lightblueBox = document.querySelector('.lightbluebox')
-      const helloContent = document.querySelector('.hello')
-      const wlecome = document.querySelector('.welcome')
-      const loginBox = document.querySelector('.login-box')
-      const singUpBox = document.querySelector('.signup-box')
-      let status = localStorage.getItem('status')
-
-      function addClass() {
-        lightblueBox.classList.add('right')
-        yellowBox.classList.add('left')
-        helloContent.classList.add('InBoxRight')
-        wlecome.classList.add('InBoxRight')
-        loginBox.classList.add('InBoxRight')
-        singUpBox.classList.add('InBoxRight')
-      }
-
-      function removeClass() {
-        lightblueBox.classList.remove('right')
-        yellowBox.classList.remove('left')
-        helloContent.classList.remove('InBoxRight')
-        wlecome.classList.remove('InBoxRight')
-        loginBox.classList.remove('InBoxRight')
-        singUpBox.classList.remove('InBoxRight')
-      }
-
-      if (!e && status === 'signup') {
-        addClass()
-      } else if (e && status === 'signup') {
-        removeClass()
-        localStorage.setItem('status', 'login')
-      } else if (e) {
-        addClass()
-        localStorage.setItem('status', 'signup')
-      }
-    }
-
     window.addEventListener('DOMContentLoaded', function () {
       const buttons = document.querySelectorAll('.signup-btn')
       const signUpBtn = document.querySelector('#signUpBtn')
       const loginBtn = document.querySelector('#loginBtn')
       const logOutLink = document.querySelector('#logout')
-
-      firstRnder()
-
-      buttons.forEach((button) => {
-        button.addEventListener('click', (e) => {
-          changePage(e)
-        })
-      })
-
       // sign up button
       signUpBtn.addEventListener('click', () => {
-        const signUpName = document.querySelector('#signUpName').value
-        const signUpPassword = document.querySelector('#signUpPassword').value
+        const signUpName = document.querySelector('#loginEmail').value
+        const signUpPassword = document.querySelector('#loginPassword').value
         function successAction() {
           localStorage.setItem(signUpName, signUpPassword)
           localStorage.setItem("root", signUpName)
+          document.querySelector('#loginEmail').value = '';
+          document.querySelector('#loginPassword').value = '';
           alert('註冊成功請登入')
         }
 
         if (signUpName === "" || signUpPassword === "") {
           alert('請填入帳號及密碼')
-        } else {
+        }
+
+        else {
           successAction()
         }
       })
@@ -347,18 +166,22 @@
           alert("登入成功");
           window.location.href = "./index.html";
         }
+        else if (password == null) {
+          alert("無此帳號請註冊")
+        }
         else {
           alert("帳號或密碼不正確");
         }
       })
-
       // logOut
       logOutLink.addEventListener('click', () => {
         const sayHiElement = document.querySelector('.sayHi')
         localStorage.clear()
         window.location.href = 'index.html';
       })
-    })</script>
+    })
+
+  </script>
 </body>
 
 </html>

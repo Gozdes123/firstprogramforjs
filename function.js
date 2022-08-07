@@ -247,10 +247,13 @@ let date = new Date();
 let weekarray = ['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun'];
 function Days() {
     let week;
+    date.getDay();
     if (date.getDay() == 1) {
         week = weekarray[0];
-    } else {
-        week = weekarray[date.getDay() - 1];
+    } else if (date.getDay() == 0) {
+        week = weekarray[6];
+    }else{
+       week = weekarray[date.getDay() - 1];
     }
     let day = document.querySelector('.' + week);
     day.style.backgroundColor = '#7bdff2';

@@ -391,6 +391,7 @@ nav a:hover:after {
 .container_img h1 {
     font-family: 'Kaisei HarunoUmi', serif;
     font-size: 16px;
+    background-color: #cae9ff;
 }
 .col-2 img {
     flex-shrink: 0;
@@ -641,8 +642,6 @@ footer h1 {
     .footer-search {
         background-color: #cae9ff;
         height: 60px;
-        position: absolute;
-        bottom: 0;
     }
     .footer-search a {
         text-decoration: none;

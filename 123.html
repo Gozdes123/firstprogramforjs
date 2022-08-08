@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: aquamarine;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .col-2 {
+      width: calc(100% / 12 * 2);
+      float: left;
+      padding: 20px;
+      background-color: black;
+    }
+
+    .col-12 {
+      width: calc(100% / 12 * 12);
+      float: left;
+      padding: 20px;
+    }
+
+    .col-9 {
+      width: calc(100% / 12 * 9);
+      float: left;
+      padding: 20px;
+    }
+
+    .rankcontent {
+      background-color: aquamarine;
+      height: 320px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="col-12">
+    <div class="rank4img col-2">
+      <img src="img/anime/img0.jpg" alt="">
+    </div>
+    <div class="rankcontent col-9">
+      <h1>NO.1&emsp;間諜家家酒</h1>
+      在名門菁英雲集的「秀知院學園」裡，高中部學生會副會長四宮輝夜與會長白銀御行備受大家矚目。兩人雖暗中相互愛慕，卻因自尊心過高無法變得坦率，反而開始絞盡腦汁力求讓對方先表達愛意……從此，兩人間的一場場精彩又搞笑的戀愛頭腦戰，每日不停歇地在上演著
+    </div>
+  </div>
+</body>
+
+</html>

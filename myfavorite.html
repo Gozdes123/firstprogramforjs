@@ -810,8 +810,12 @@
 
       /* 圖片燈箱 */
       #caption {
-        /* background-color: #5a5a5a92; */
+        overflow-y: scroll;
         height: 600px;
+      }
+
+      #caption::-webkit-scrollbar {
+        display: none;
       }
 
       /* 燈箱顯示 */
@@ -848,9 +852,14 @@
         position: relative;
       }
 
-      /* 燈箱顯示 */
+      /* 圖片燈箱 */
       #caption {
-        height: 450px;
+        overflow-y: scroll;
+        height: 650px;
+      }
+
+      #caption::-webkit-scrollbar {
+        display: none;
       }
 
       .modal-col {
@@ -903,9 +912,14 @@
         position: relative;
       }
 
-      /* 燈箱顯示 */
+      /* 圖片燈箱 */
       #caption {
+        overflow-y: scroll;
         height: 650px;
+      }
+
+      #caption::-webkit-scrollbar {
+        display: none;
       }
 
       .modal-col {

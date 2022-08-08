@@ -555,6 +555,7 @@ footer h1 {
         overflow-y: scroll;
         overflow-x: scroll;
     }
+
     #days ul {
         width: 1200px;
     }
@@ -613,6 +614,9 @@ footer h1 {
         height: 300px;
         overflow-y: scroll;
     }
+    .section-center::-webkit-scrollbar {
+        display: none;
+    }
     .img-heart {
         position: relative;
     }
@@ -638,6 +642,9 @@ footer h1 {
     #caption {
         overflow-y: scroll;
         height: 350px;
+    }
+    #caption::-webkit-scrollbar {
+        display: none;
     }
     /* 底下手機導覽頁 */
     .footer-search {
@@ -765,6 +772,9 @@ footer h1 {
         height: 300px;
         overflow-y: scroll;
     }
+    .section-center::-webkit-scrollbar {
+        display: none;
+    }
     .img-heart {
         position: relative;
     }
@@ -772,6 +782,9 @@ footer h1 {
     #caption {
         overflow-y: scroll;
         height: 450px;
+    }
+    #caption::-webkit-scrollbar {
+        display: none;
     }
     .modal-col {
         padding-left: 35%;
@@ -864,8 +877,11 @@ footer h1 {
     }
     /* 圖片燈箱 */
     #caption {
-        background-color: #5a5a5a92;
+        overflow-y: scroll;
         height: 600px;
+    }
+    #caption::-webkit-scrollbar {
+        display: none;
     }
     /* 燈箱顯示 */
     .modal-col {
@@ -897,7 +913,11 @@ footer h1 {
     }
     /* 燈箱顯示 */
     #caption {
-        height: 450px;
+        overflow-y: scroll;
+        height: 650px;
+    }
+    #caption::-webkit-scrollbar {
+        display: none;
     }
     .modal-col {
         width: calc(100% / 12 * 5);
@@ -943,7 +963,11 @@ footer h1 {
     }
     /* 燈箱顯示 */
     #caption {
+        overflow-y: scroll;
         height: 650px;
+    }
+    #caption::-webkit-scrollbar {
+        display: none;
     }
     .modal-col {
         width: calc(100% / 12 * 5);

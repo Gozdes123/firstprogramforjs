@@ -9,6 +9,9 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css'
     integrity='sha512-9nqhm3FWfB00id4NJpxK/wV1g9P2QfSsEPhSSpT+6qrESP6mpYbTfpC+Jvwe2XY27K5mLwwrqYuzqMGK5yC9/Q=='
     crossorigin='anonymous' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'
+    integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=='
+    crossorigin='anonymous'></script>
   <style>
     /* global start */
     @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
@@ -503,6 +506,10 @@
         overflow-y: scroll;
       }
 
+      .section-center::-webkit-scrollbar {
+        display: none;
+      }
+
       .img-heart {
         position: relative;
       }
@@ -532,6 +539,10 @@
       #caption {
         overflow-y: scroll;
         height: 350px;
+      }
+
+      #caption::-webkit-scrollbar {
+        display: none;
       }
 
       .footer-search {
@@ -680,6 +691,10 @@
         overflow-y: scroll;
       }
 
+      .section-center::-webkit-scrollbar {
+        display: none;
+      }
+
       .img-heart {
         position: relative;
       }
@@ -688,6 +703,10 @@
       #caption {
         overflow-y: scroll;
         height: 450px;
+      }
+
+      #caption::-webkit-scrollbar {
+        display: none;
       }
 
       .modal-col {
@@ -937,7 +956,7 @@
     </ul>
   </nav>
   <div class="container" id="hambugertoggle">
-    <a href="#" onclick="ToggleMenu()" class="burgar_btn">
+    <a href="#" class="burgar_btn">
       <i class="fas fa-bars"></i>
     </a>
     <ul id="menu">
@@ -966,7 +985,7 @@
     <div class="col-3 footer-search-bar1"><a href="index.html"><i class="fa-solid fa-house"></i></a>
     </div>
     <div class="col-3 footer-search-bar2"><a href="myfavorite.html"><i class="fa-solid fa-heart"></i></a></div>
-    <div class="col-3 footer-search-bar3"><a href="#"><i class="fa-solid fa-fire"></i></a></div>
+    <div class="col-3 footer-search-bar3"><a href="recommend.html"><i class="fa-solid fa-fire"></i></a></div>
     <div class="col-3 footer-search-bar4"><a onclick="Login()"><i class="fa-solid fa-address-card"></i></a></div>
   </div>
   <footer class="col-12 clearfix">
@@ -1155,12 +1174,11 @@
           '宿命迴響（takt op.）是由萬代南夢宮藝術和DeNA共同製作的跨媒體計劃，以古典音樂為主題。電視動畫《宿命迴響：命運節拍》（takt op.Destiny）於2021年10月5日至12月21日播映，亦將於2022年推出手機遊戲《宿命迴響：弦上的嘆息》（takt op. 運命は真紅き旋律の街を）。',
       },
     ];
-    function ToggleMenu() {
-      var menu = document.getElementById('menu');
-      if (menu.style.display == '' || menu.style.display == 'block') {
-        menu.style.display = 'none';
-      } else menu.style.display = 'block';
-    }
+    $(document).ready(function () {
+      $('.burgar_btn').click(function () {
+        $('#menu').slideToggle('slow');
+      });
+    });
     const sectionCenter = document.querySelector('.section-center');
     function displayMenuItems(menuItems) {
       let displayMenu = menuItems.map(function (item) {
@@ -1284,7 +1302,6 @@
     }
     window.addEventListener('DOMContentLoaded', function () {
       Lightbox();
-      ToggleMenu()
       Showname();
       lovecolor()
     });

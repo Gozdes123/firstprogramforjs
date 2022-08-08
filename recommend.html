@@ -8,6 +8,9 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css'
     integrity='sha512-9nqhm3FWfB00id4NJpxK/wV1g9P2QfSsEPhSSpT+6qrESP6mpYbTfpC+Jvwe2XY27K5mLwwrqYuzqMGK5yC9/Q=='
     crossorigin='anonymous' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'
+    integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=='
+    crossorigin='anonymous'></script>
   <title>Document</title>
   <style>
     /* global start */
@@ -289,6 +292,22 @@
       font-family: 'Kosugi Maru', sans-serif;
     }
 
+    .ranktoogle1 {
+      display: none;
+    }
+
+    .ranktoogle2 {
+      display: none;
+    }
+
+    .ranktoogle3 {
+      display: none;
+    }
+
+    .rankcontent-a {
+      display: none;
+    }
+
     footer {
       height: 70px;
       background-color: #cae9ff;
@@ -431,21 +450,19 @@
         width: 100%;
         height: 100%;
         margin: 0;
-        width: calc(100% / 12 * 6);
+        width: calc(100% / 12 * 12);
         float: left;
       }
 
       .rank111 img {
-        width: 100%;
-        height: 100%;
-        flex-shrink: 0;
-        object-fit: cover;
+        padding: 0;
       }
 
       .rank111 {
-        padding: 0 0 0 20px;
-        width: calc(100% / 12 * 6);
+        padding: 0;
+        width: calc(100% / 12 * 12);
         float: left;
+        text-align: center;
       }
 
       /* rank2 */
@@ -464,21 +481,19 @@
         width: 100%;
         height: 100%;
         margin: 0;
-        width: calc(100% / 12 * 6);
+        width: calc(100% / 12 * 12);
         float: left;
       }
 
       .rank222 img {
-        width: 100%;
-        height: 100%;
-        flex-shrink: 0;
-        object-fit: cover;
+        padding: 0;
       }
 
       .rank222 {
         padding: 0 0 0 20px;
-        width: calc(100% / 12 * 6);
+        width: calc(100% / 12 * 12);
         float: left;
+        text-align: center;
       }
 
       /* rank3 */
@@ -493,22 +508,22 @@
       }
 
       .rank333 img {
-        width: 100%;
-        height: 100%;
+        padding: 0;
       }
 
       .rank33 {
         background-color: rgb(210, 125, 73);
         width: 100%;
         height: 100%;
-        width: calc(100% / 12 * 6);
+        width: calc(100% / 12 * 12);
         float: left;
       }
 
       .rank333 {
         padding: 0 0 0 20px;
-        width: calc(100% / 12 * 6);
+        width: calc(100% / 12 * 12);
         float: left;
+        text-align: center;
       }
 
       /* 下面所有的rank */
@@ -540,7 +555,6 @@
       }
 
       .rankcontent-a {
-
         overflow-y: scroll;
         height: 200px;
       }
@@ -647,21 +661,27 @@
         width: 100%;
       }
 
+
       .rankcontent {
         height: 100%;
         background-color: #cae9ff;
-        line-height: 30px;
-        height: 300px;
-        overflow-y: scroll;
       }
 
+      .rankcontent-a {
+        overflow-y: scroll;
+        height: 200px;
+      }
 
-      .rankcontent::-webkit-scrollbar {
+      .rankcontent-a::-webkit-scrollbar {
         display: none;
       }
 
       .rankcontent h1 {
         padding-bottom: 10px;
+      }
+
+      .footer-search {
+        display: none;
       }
     }
 
@@ -696,18 +716,23 @@
       .rankcontent {
         height: 100%;
         background-color: #cae9ff;
-        line-height: 30px;
-        height: 300px;
-        overflow-y: scroll;
       }
 
+      .rankcontent-a {
+        overflow-y: scroll;
+        height: 200px;
+      }
 
-      .rankcontent::-webkit-scrollbar {
+      .rankcontent-a::-webkit-scrollbar {
         display: none;
       }
 
       .rankcontent h1 {
         padding-bottom: 10px;
+      }
+
+      .footer-search {
+        display: none;
       }
     }
 
@@ -724,7 +749,7 @@
     </ul>
   </nav>
   <div class="container" id="hambugertoggle">
-    <a href="#" onclick="ToggleMenu()" class="burgar_btn">
+    <a href="#" class="burgar_btn">
       <i class="fas fa-bars"></i>
     </a>
     <ul id="menu">
@@ -737,26 +762,26 @@
     <h1>本周排名Top3</h1>
   </div>
   <div class="rank1 col-4 clearfix">
-    <div class="rank11">
+    <div class="rank11 ranktoogle">
       <h1>1</h1>
     </div>
-    <div class="rank111">
+    <div class="rank111 ranktoogle1">
       <img src="img/anime/img0.jpg" alt="">
     </div>
   </div>
   <div class="rank2 col-4">
-    <div class="rank22">
+    <div class="rank22 ranktoogle">
       <h1>2</h1>
     </div>
-    <div class="rank222">
+    <div class="rank222 ranktoogle2">
       <img src="img/anime/img1.jpg" alt="">
     </div>
   </div>
   <div class="rank3 col-4">
-    <div class="rank33">
+    <div class="rank33 ranktoogle">
       <h1>3</h1>
     </div>
-    <div class="rank333">
+    <div class="rank333 ranktoogle3">
       <img src="img/anime/img2.jpg" alt="">
     </div>
   </div>
@@ -961,12 +986,27 @@
           '宿命迴響（takt op.）是由萬代南夢宮藝術和DeNA共同製作的跨媒體計劃，以古典音樂為主題。電視動畫《宿命迴響：命運節拍》（takt op.Destiny）於2021年10月5日至12月21日播映，亦將於2022年推出手機遊戲《宿命迴響：弦上的嘆息》（takt op. 運命は真紅き旋律の街を）。',
       },
     ];
-    function ToggleMenu() {
-      var menu = document.getElementById('menu');
-      if (menu.style.display == '' || menu.style.display == 'block') {
-        menu.style.display = 'none';
-      } else menu.style.display = 'block';
-    }
+    $(document).ready(function () {
+      $('.burgar_btn').click(function () {
+        $('#menu').slideToggle('slow');
+      });
+    });
+    $(document).ready(function () {
+      $('.ranktoogle').click(function () {
+        $('.ranktoogle1').slideToggle(1000);
+        $('.ranktoogle2').slideToggle(1000);
+        $('.ranktoogle3').slideToggle(1000);
+      })
+    });
+    function imgcontent() {
+      for (let i = 0; i < menu.length; i++) {
+        $(document).ready(function () {
+          $('.rankcontentbtn' + i).click(function () {
+            $('.rankcontentshow' + i).slideToggle(800);
+          });
+        });
+      }
+    } imgcontent()
     let rank = document.querySelector('.container-rank')
     const container = document.querySelector('.btn-container');
     const sectionCenter = document.querySelector('.section-center');
@@ -977,9 +1017,9 @@
     <div class="rank4img col-2">
         <img src="${item.img}" alt="">
       </div>
-      <div class="rankcontent col-10">
+      <div class="rankcontent col-10 rankcontentbtn${item.id}">
         <h1>NO.${item.id + 1}&emsp;${item.title}&emsp;<i class="fa-solid fa-caret-down"></i></h1>
-      <div class="rankcontent-a">
+      <div class="rankcontent-a rankcontentshow${item.id}">
         <a>${item.content}</a>
       </div>
         </div>
@@ -1112,7 +1152,6 @@
       }
     };
     window.addEventListener('DOMContentLoaded', function () {
-      ToggleMenu()
       displayMenuItems(menu);
       nextpage();
       Showname()

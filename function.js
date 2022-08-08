@@ -180,13 +180,11 @@ const menu = [
             '宿命迴響（takt op.）是由萬代南夢宮藝術和DeNA共同製作的跨媒體計劃，以古典音樂為主題。電視動畫《宿命迴響：命運節拍》（takt op.Destiny）於2021年10月5日至12月21日播映，亦將於2022年推出手機遊戲《宿命迴響：弦上的嘆息》（takt op. 運命は真紅き旋律の街を）。',
     },
 ];
-
-function ToggleMenu() {
-    var menu = document.getElementById('menu');
-    if (menu.style.display == '' || menu.style.display == 'block') {
-        menu.style.display = 'none';
-    } else menu.style.display = 'block';
-}
+$(document).ready(function () {
+    $('.burgar_btn').click(function () {
+        $('#menu').slideToggle('slow');
+    });
+});
 //  輪播圖片
 let index = 0;
 let ImageCount = document.querySelectorAll('.carousel .container1 img').length;
@@ -457,7 +455,6 @@ function Login() {
 
 window.addEventListener('DOMContentLoaded', function () {
     Lightbox();
-    ToggleMenu();
     Showname();
     lovecolor();
 });

@@ -109,7 +109,24 @@ ul {
 .no {
     margin: 0 -15px;
 }
-
+.top {
+    position: fixed;
+    z-index: 2022; /*比其他數字大就是上面*/
+    right: 20px;
+    bottom: 20px;
+    border-radius: 100%;
+    background-color: #cae9ff83;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+}
+.top a {
+    line-height: 60px;
+    text-decoration: none;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-weight: 700;
+    color: #000000;
+}
 /* nav */
 .navbar {
     background-color: #cae9ff;
@@ -426,7 +443,7 @@ nav a:hover:after {
     /* Full height */
     overflow: hidden;
     /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     /* Fallback color */
     /* background-color: rgba(0, 0, 0, 0.9); */
     /* Black w/ opacity */

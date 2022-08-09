@@ -140,6 +140,27 @@
       margin: 0 -15px;
     }
 
+    .top {
+      position: fixed;
+      z-index: 2022;
+      /*比其他數字大就是上面*/
+      right: 20px;
+      bottom: 20px;
+      border-radius: 100%;
+      background-color: #cae9ff83;
+      height: 60px;
+      width: 60px;
+      text-align: center;
+    }
+
+    .top a {
+      line-height: 60px;
+      text-decoration: none;
+      font-family: 'Kosugi Maru', sans-serif;
+      font-weight: 700;
+      color: #000000;
+    }
+
     h1 {
       font-family: 'Kosugi Maru', sans-serif;
     }
@@ -449,7 +470,7 @@
         background-color: rgb(255, 203, 106);
         width: 100%;
         height: 100%;
-        margin: 0;
+        margin: 0 0 2px 0;
         width: calc(100% / 12 * 12);
         float: left;
       }
@@ -533,6 +554,10 @@
         margin-left: 10px;
         margin-bottom: 10px;
         width: 100%;
+      }
+
+      .rank4father h1 {
+        font-size: 30px;
       }
 
       .rank4col {
@@ -647,6 +672,10 @@
 
       }
 
+      .rank4father h1 {
+        font-size: 40px;
+      }
+
       .rank4col {
         margin-top: 0;
         padding-top: 0;
@@ -670,6 +699,10 @@
       .rankcontent-a {
         overflow-y: scroll;
         height: 200px;
+      }
+
+      .rankcontent-a a {
+        font-size: 23px;
       }
 
       .rankcontent-a::-webkit-scrollbar {
@@ -740,11 +773,16 @@
 </head>
 
 <body>
+  <div class="top">
+    <a href="#top">Top</a>
+  </div>
+  <div id="top">
+  </div>
   <nav class="container navbar">
     <ul class="float-nav clearfix">
       <li><a href="index.html">Anime</a></li>
       <li><a href="#" class="rename" onclick="Login()"></a></li>
-      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#" onclick="Favorite()">My Favorite</a></li>
       <li><a href="#">Recommend</a></li>
     </ul>
   </nav>
@@ -753,7 +791,7 @@
       <i class="fas fa-bars"></i>
     </a>
     <ul id="menu">
-      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#" onclick="Favorite()">My Favorite</a></li>
       <li><a href="#">Recommend</a></li>
       <li onclick="Login()"><a href="#" class="renamephone"></a></li>
     </ul>
@@ -796,7 +834,7 @@
   <div class="col-12 footer-search">
     <div class="col-3 footer-search-bar1"><a href="index.html"><i class="fa-solid fa-house"></i></a>
     </div>
-    <div class="col-3 footer-search-bar2"><a href="myfavorite.html"><i class="fa-solid fa-heart"></i></a></div>
+    <div class="col-3 footer-search-bar2"><a href="#" onclick="Favorite()"><i class="fa-solid fa-heart"></i></a></div>
     <div class="col-3 footer-search-bar3"><a href="#"><i class="fa-solid fa-fire"></i></a></div>
     <div class="col-3 footer-search-bar4"><a onclick="Login()"><i class="fa-solid fa-address-card"></i></a></div>
   </div>
@@ -1151,6 +1189,13 @@
         ini(iNum);
       }
     };
+    function Favorite() {
+      if (localStorage.getItem('root') !== null) {
+        window.location.href = 'myfavorite.html';
+      } else {
+        window.location.href = 'storge.html';
+      }
+    }
     window.addEventListener('DOMContentLoaded', function () {
       displayMenuItems(menu);
       nextpage();

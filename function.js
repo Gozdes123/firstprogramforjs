@@ -452,7 +452,13 @@ function Login() {
         window.location.href = 'storge.html';
     }
 }
-
+function Favorite(){
+  if (localStorage.getItem('root') !== null){
+        window.location.href = 'myfavorite.html';
+  }else{
+    window.location.href = 'storge.html';
+  }
+}
 window.addEventListener('DOMContentLoaded', function () {
     Lightbox();
     Showname();

@@ -139,6 +139,27 @@
       margin: 0 -15px;
     }
 
+    .top {
+      position: fixed;
+      z-index: 2022;
+      /*比其他數字大就是上面*/
+      right: 20px;
+      bottom: 20px;
+      border-radius: 100%;
+      background-color: #cae9ff83;
+      height: 60px;
+      width: 60px;
+      text-align: center;
+    }
+
+    .top a {
+      line-height: 60px;
+      text-decoration: none;
+      font-family: 'Kosugi Maru', sans-serif;
+      font-weight: 700;
+      color: #000000;
+    }
+
     /* nav */
     .navbar {
       background-color: #cae9ff;
@@ -271,6 +292,10 @@
       transition: 2s;
     }
 
+    .section-center {
+      height: 100vh;
+    }
+
     .section-center h1 {
       font-family: 'Kaisei HarunoUmi', serif;
       font-size: 16px;
@@ -306,7 +331,7 @@
       /* Full height */
       overflow: hidden;
       /* Enable scroll if needed */
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
       /* Fallback color */
       /* background-color: rgba(0, 0, 0, 0.9); */
       /* Black w/ opacity */
@@ -502,7 +527,7 @@
       }
 
       .section-center {
-        height: 500px;
+        height: 100vh;
         overflow-y: scroll;
       }
 
@@ -582,7 +607,7 @@
     }
 
     /* 平板*/
-    @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    @media only screen and (min-width: 769px) and (max-width: 1200px) {
 
       /* 輪播 */
       .carousel {
@@ -687,7 +712,7 @@
       }
 
       .section-center {
-        height: 700px;
+        height: 100vh;
         overflow-y: scroll;
       }
 
@@ -960,12 +985,17 @@
 </head>
 
 <body>
+  <div class="top">
+    <a href="#top">Top</a>
+  </div>
+  <div id="top">
+  </div>
   <!-- navbar -->
   <nav class="container navbar">
     <ul class="float-nav clearfix">
       <li><a href="index.html">Anime</a></li>
       <li><a class="rename" onclick="Login()"></a></li>
-      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#" onclick="Favorite()">My Favorite</a></li>
       <li><a href="recommend.html">Recommend</a></li>
     </ul>
   </nav>
@@ -974,7 +1004,7 @@
       <i class="fas fa-bars"></i>
     </a>
     <ul id="menu">
-      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#" onclick="Favorite()">My Favorite</a></li>
       <li><a href="recommend.html">Recommend</a></li>
       <li onclick="Login()"><a class="renamephone"></a></li>
     </ul>
@@ -998,7 +1028,7 @@
   <div class="col-12 footer-search">
     <div class="col-3 footer-search-bar1"><a href="index.html"><i class="fa-solid fa-house"></i></a>
     </div>
-    <div class="col-3 footer-search-bar2"><a href="myfavorite.html"><i class="fa-solid fa-heart"></i></a></div>
+    <div class="col-3 footer-search-bar2"><a href="#" onclick="Favorite()"><i class="fa-solid fa-heart"></i></a></div>
     <div class="col-3 footer-search-bar3"><a href="recommend.html"><i class="fa-solid fa-fire"></i></a></div>
     <div class="col-3 footer-search-bar4"><a onclick="Login()"><i class="fa-solid fa-address-card"></i></a></div>
   </div>
@@ -1312,6 +1342,13 @@
         if (localStorage.getItem(btn) !== null && dom !== null) {
           document.querySelector('.' + btn).style.color = 'red';
         }
+      }
+    }
+    function Favorite() {
+      if (localStorage.getItem('root') !== null) {
+        window.location.href = 'myfavorite.html';
+      } else {
+        window.location.href = 'storge.html';
       }
     }
     window.addEventListener('DOMContentLoaded', function () {

@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Document</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+    /* font-family: 'Kosugi Maru', sans-serif; */
     .board {
       margin: auto;
       max-width: 700px;
@@ -18,7 +22,7 @@
       margin-right: 0;
       font-size: 40px;
       cursor: pointer;
-      color: #59a5d8;
+      color: #a6ddff;
       position: absolute;
       bottom: 320px;
       left: 300px;
@@ -51,28 +55,20 @@
       position: relative;
     }
 
-    .signup-btn .front {
-      display: block;
-      padding: 15px 42px 10px 42px;
-      border-radius: 20px;
-      font-size: 1.25rem;
-      background: rgb(248, 188, 35);
-      color: white;
-      transform: translateY(-2px);
-    }
+
 
     .signin-btn {
       margin-top: 20px;
-      background: #59a5d8;
+      background: #a6ddff;
       border-radius: 20px;
-      border-top: #59a5d8 solid 3px;
+      border-top: #a6ddff solid 3px;
       border-left: none;
       border-right: none;
       border-bottom: none;
       padding: 0;
       cursor: pointer;
       outline-offset: 4px;
-      box-shadow: 0 8px 2px #59a5d8, 2px 9px 2px #addeff;
+      box-shadow: 0 8px 2px #a6ddff, 2px 9px 2px #a6ddff;
       margin-left: 15px;
     }
 
@@ -81,8 +77,10 @@
       padding: 15px 42px 10px 42px;
       border-radius: 20px;
       font-size: 1.25rem;
-      background: #59a5d8;
+      background: #a6ddff;
       transform: translateY(-2px);
+      font-family: 'Kosugi Maru', sans-serif;
+      color: #001f54;
     }
 
     .login-box {
@@ -104,6 +102,11 @@
       padding: 5px;
     }
 
+    h1 {
+      color: #001f54;
+      font-family: 'Kosugi Maru', sans-serif;
+    }
+
   </style>
 </head>
 
@@ -121,7 +124,7 @@
             <input id="loginPassword" type="password" placeholder="Password">
           </div>
           <button id="loginBtn" class="signin-btn">
-            <span class="front">登錄</span>
+            <span class="front">登入</span>
           </button>
           <button id="signUpBtn" class="signin-btn">
             <span class="front">註冊</span>

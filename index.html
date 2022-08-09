@@ -23,12 +23,17 @@
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class="top">
+    <a href="#top">Top</a>
+  </div>
+  <div id="top">
+  </div>
   <!-- navbar -->
   <nav class="container navbar">
     <ul class="float-nav clearfix">
       <li><a href="index.html">Anime</a></li>
       <li><a href="#" class="rename" onclick="Login()"></a></li>
-      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#" onclick="Favorite()">My Favorite</a></li>
       <li><a href="recommend.html">Recommend</a></li>
     </ul>
   </nav>
@@ -37,7 +42,7 @@
       <i class="fas fa-bars"></i>
     </a>
     <ul id="menu">
-      <li><a href="myfavorite.html">My Favorite</a></li>
+      <li><a href="#" onclick="Favorite()">My Favorite</a></li>
       <li><a href="recommend.html">Recommend</a></li>
       <li onclick="Login()"><a href="#" class="renamephone"></a></li>
     </ul>
@@ -149,7 +154,7 @@
   <div class="col-12 footer-search">
     <div class="col-3 footer-search-bar1"><a href="index.html"><i class="fa-solid fa-house"></i></a>
     </div>
-    <div class="col-3 footer-search-bar2"><a href="myfavorite.html"><i class="fa-solid fa-heart"></i></a></div>
+    <div class="col-3 footer-search-bar2"><a href="#" onclick="Favorite()"><i class="fa-solid fa-heart"></i></a></div>
     <div class="col-3 footer-search-bar3"><a href="recommend.html"><i class="fa-solid fa-fire"></i></a></div>
     <div class="col-3 footer-search-bar4"><a onclick="Login()"><i class="fa-solid fa-address-card"></i></a></div>
   </div>

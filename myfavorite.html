@@ -173,25 +173,20 @@
 
     nav ul {
       list-style: none;
-      /* 移除項目符號 */
       margin: 0;
       padding: 0;
     }
 
     nav a {
       color: #003049;
-      /* 移除超連結顏色 */
       display: block;
-      /* 讓 <a> 填滿 <li> */
       font-size: 1.2rem;
       padding: 10px;
       text-decoration: none;
-      /* 移除超連結底線 */
       position: relative;
       font-family: 'Orbitron', sans-serif;
     }
 
-    /* 滑鼠移到 <a> 時變成底線 */
     nav a:after {
       position: absolute;
       content: '';
@@ -313,31 +308,21 @@
       opacity: 0.7;
     }
 
-    /* The Modal (background) */
     .modal {
       display: none;
-      /* Hidden by default */
       position: fixed;
-      /* Stay in place */
       z-index: 1;
-      /* Sit on top */
       padding-top: 0px;
-      /* Location of the box */
       left: 0;
       top: 0;
       width: 100%;
-      /* Full width */
       height: 100%;
-      /* Full height */
       overflow: hidden;
-      /* Enable scroll if needed */
       background-color: rgba(0, 0, 0, 0.8);
-      /* Fallback color */
-      /* background-color: rgba(0, 0, 0, 0.9); */
-      /* Black w/ opacity */
+
     }
 
-    /* Modal Content (image) */
+
     .modal-content {
       margin: auto;
       display: block;
@@ -345,7 +330,7 @@
       max-width: 400px;
     }
 
-    /* Caption of Modal Image */
+
     #caption {
       margin: auto;
       display: block;
@@ -357,7 +342,7 @@
       height: 150px;
     }
 
-    /* Add Animation */
+
     .modal-content,
     #caption {
       -webkit-animation-name: zoom;
@@ -398,7 +383,7 @@
       }
     }
 
-    /* The Close Button */
+
     .close {
       position: absolute;
       top: 15px;
@@ -1289,9 +1274,7 @@
         modal.style.display = 'block';
         modalImg.src = pictureCategory[0].img;
         document.querySelector('#caption').innerHTML = modalContent;
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName('close')[0];
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
           modal.style.display = 'none';
         };

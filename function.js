@@ -285,7 +285,7 @@ function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
         return `
         <article class="menu-item col">
-        <div class="img-heart"><img src="${item.img}" class="photo${item.id}" alt=${item.title} onclick = "Lightbox(${item.id})"">
+        <div class="img-heart"><img src="${item.img}" class="photo${item.id}" alt="${item.title}" onclick = "Lightbox(${item.id})">
         <i class="fa-solid fa-heart btncolor ${item.btn}" onclick="loveclick(${item.id})"></i></div>
               <div class="item-info">
                 <header>
@@ -320,15 +320,11 @@ function displayMenuButtons() {
     container.innerHTML = categoryBtns;
     const filterBtns = container.querySelectorAll('.filter-btn');
     filterBtns.forEach(function (btn) {
-        //選擇每個按鈕
-        // click事件
         btn.addEventListener('click', function (e) {
-            //新增點擊事件
             const category = e.currentTarget.dataset.id;
             const menuCategory = menu.filter(function (menuItems) {
                 if (menuItems.category === category) {
-                    //判斷是否為被選取的類別
-                    return menuItems; //回傳所需物件至menuCategory陣列中
+                    return menuItems;
                 }
             });
             if (category === '全部') {
@@ -348,8 +344,7 @@ function clicked() {
     let search = document.querySelector('#search').value;
     const searchCategory = menu.filter(function (menuItems) {
         if (menuItems.title.includes(search)) {
-            //判斷是否為被選取的類別
-            return menuItems; //回傳所需物件至menuCategory陣列中
+            return menuItems;
         }
     });
     displayMenuItems(searchCategory);
@@ -357,8 +352,8 @@ function clicked() {
     lovecolor();
 }
 window.addEventListener('DOMContentLoaded', function () {
-    displayMenuItems(menu); //預設顯示所有內容
-    displayMenuButtons(); //顯示按鈕與開啟其功能
+    displayMenuItems(menu);
+    displayMenuButtons();
 });
 // 燈箱
 function Lightbox(number) {
@@ -377,9 +372,7 @@ function Lightbox(number) {
        modal.style.display = 'block';
        modalImg.src = pictureCategory[0].img;
        document.querySelector('#caption').innerHTML = modalContent;
-       // Get the <span> element that closes the modal
        var span = document.getElementsByClassName('close')[0];
-       // When the user clicks on <span> (x), close the modal
        span.onclick = function () {
            modal.style.display = 'none';
        };

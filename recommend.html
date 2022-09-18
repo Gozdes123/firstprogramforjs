@@ -1040,7 +1040,7 @@
         });
       }
     } imgcontent()
-    let rank = document.querySelector('.container-rank')
+    let rankarea = document.querySelector('.container-rank')
     const container = document.querySelector('.btn-container');
     const sectionCenter = document.querySelector('.section-center');
     function displayMenuItems(menuItems) {
@@ -1060,7 +1060,7 @@
        `
       });
       displayMenu = displayMenu.join('');
-      rank.innerHTML = displayMenu;
+      rankarea.innerHTML = displayMenu;
       function test() {
         let rank = document.querySelector('.container-bar')
         let str = document.createElement('div');
@@ -1080,24 +1080,6 @@
         document.querySelector('#pageBox').append(str2)
         document.querySelector('#pageBox').append(str3)
       } test()
-    }
-    // 登入
-    function Showname() {
-      if (localStorage.getItem('root') !== null) {
-        document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
-        document.querySelector('.renamephone').textContent = localStorage.getItem('root') + '/Logout';
-      } else {
-        document.querySelector('.rename').textContent = 'Login';
-        document.querySelector('.renamephone').textContent = 'Login';
-      }
-    }
-    function Login() {
-      if (localStorage.getItem('root') !== null) {
-        localStorage.clear();
-        document.querySelector('.rename').textContent = 'Login';
-      } else {
-        window.location.href = 'storge.html';
-      }
     }
     function nextpage() {
       tabPage({
@@ -1187,6 +1169,24 @@
     function Favorite() {
       if (localStorage.getItem('root') !== null) {
         window.location.href = 'myfavorite.html';
+      } else {
+        window.location.href = 'storge.html';
+      }
+    }
+    // 登入
+    function Showname() {
+      if (localStorage.getItem('root') !== null) {
+        document.querySelector('.rename').textContent = localStorage.getItem('root') + '/Logout';
+        document.querySelector('.renamephone').textContent = localStorage.getItem('root') + '/Logout';
+      } else {
+        document.querySelector('.rename').textContent = 'Login';
+        document.querySelector('.renamephone').textContent = 'Login';
+      }
+    }
+    function Login() {
+      if (localStorage.getItem('root') !== null) {
+        localStorage.clear();
+        document.querySelector('.rename').textContent = 'Login';
       } else {
         window.location.href = 'storge.html';
       }
